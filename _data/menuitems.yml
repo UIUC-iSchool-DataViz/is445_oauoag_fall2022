@@ -1,0 +1,13 @@
+- name: Slack
+  url: https://is445fall2022.slack.com/
+  facollection: fab
+  faicon: fa-slack
+  weight: 20
+- name: Syllabus
+  url: /syllabus
+  faicon: fa-book
+  weight: 10
+- name: Canvas
+  url: https://canvas.illinois.edu/courses/21951
+  faicon: fa-school
+  weight: 50
