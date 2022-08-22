@@ -1,164 +1,315 @@
-[meta title:"IS445 Spring 2022" description:"Super cool viz for Data Viz" /]
+[meta title:"My Idyll Post" description:"Short description of your project" /]
 
 [Header
   fullWidth:true
-  title:"IS445 - Spring 2022"
-  subtitle:"Idyll Post Example for Data Viz"
-  author:"Jill Naiman"
-  authorLink:"https:astronaiman.com"
+  title:"My Idyll Post"
+  subtitle:"Welcome to Idyll. Open index.idyll to start writing"
+  author:"Your Name Here"
+  authorLink:"https://idyll-lang.org"
   date:`(new Date()).toDateString()`
   background:"#222222"
   color:"#ffffff"
    /]
 
+
 ## Introduction
 
-### Markdown Syntax Reminders
-
-Unordered lists:
-* thing 1
-* thing 2
-
-Ordered lists:
-1. thing the first
-1. thing the second
-
-```
-print('hi')
-```
-
-![A very large corgi.](https://i.redd.it/5f0snjdbzr121.jpg)
-
-## Images
-
-Attaching images (beyond the markdown style above) will look very much like HTML tags:
-[img src:"https://i.redd.it/5f0snjdbzr121.jpg" style:`{height:'300px'}`/]
-
-[p] This is a paragraph tag [/p]
+This is an Idyll post. It is generated via
+the file `index.idyll`. To compile this post using
+idyll, run the command `idyll` inside of this directory.
 
 
-## Layouts
-
-We will try to put images side by side using [the Float layout](https://idyll-lang.org/docs/component/float).
-
-[Float position:"left"]
-  [img src:"https://uiuc-ischool-dataviz.github.io/spring2019online/week04/data/littleCorgiInHat.png" style:`{height:300}`/]
-  // this is a comment note that we had to make sure to close the [img /] tag
-[/Float]
-
-[Float position:"right"]
-  [img src:"https://uiuc-ischool-dataviz.github.io/spring2019online/week10/corg/IMG_2809.jpg" style:`{height:300}`/]
-[/Float]
-
-For reference from [Idyll page on scrollers](https://idyll-lang.org/docs/component/scroller):
-
-```
-[Scroller currentStep:scrollerIndex]
-  [Graphic style:`{padding: 50}`]
-      [Chart type:`"line"` data:`scrollerChartData.slice(0, scrollerIndex + 2)` /]
-  [/Graphic]
-
-  [Step]## Hey, neat, here's some data![/Step]
-  [Step]## ...   [/Step]
-  [Step]## ...  What's that more data?![/Step]
-  [Step]## Hmm...[/Step]
-  [Step]## Too much data.[/Step]
-  [Step]## Stop.[/Step]
-  [Step]## that.[/Step]
-  [Step]## data[/Step]
-
-[/Scroller]
-```
-
-[Scroller currentStep:scrollerIndex]
-  [Graphic style:`{padding:50}`]
-    [img src:"https://uiuc-ischool-dataviz.github.io/spring2019online/week10/corg/IMG_2814.jpg" style:`{height:700}` /]
-  [/Graphic]
-
-  [Step] ## Welsh Corgis are a small type of hearding dog, originally from Wales, UK [/Step]
-  [Step] ## Corgi-Dashshund mixes are called dorgis. [/Step]
-  [Step] ## Queen Elizabeth II has owned more than 30 corgis in her lifetime [/Step]
-
-
-[/Scroller]
-
-## Data
-
-[data name:"corgisTime" source:"corgs_per_country_over_time_columns_2020.csv" /]
-
-### Table with our data
-
-[Table data:corgisTime /]
-
-### Chart with Idyll's built in chart
-
-We'll first try with [the built in chart](https://idyll-lang.org/docs/component/chart) of Idyll, for reference:
-
-```
-[var name:"dataToBeCharted" value:`[
-  {x: 0, y: 0.5},
-  {x: 3.5, y: 0.5},
-  {x: 4, y: 0},
-  {x: 4.5, y: 1},
-  {x: 5, y: 0.5},
-  {x: 8, y: 0.5}
-]` /]
-
-[Chart type:"line" data:dataToBeCharted domain:`[0, 8]` range:`[0, 1]` /]
-```
-
-[Chart type:"time" data:`corgisTime` domain:`null` range:`null` x:"Years" y:"United States" /]
-
-Note: this data is giving us accumulations of corgis over time, we probably don't want to connect these unconnected events with a line.
-
-[Chart type:"bar" data:`corgisTime` domain:`null` range:`null` x:"Years" y:"United States" /]
-
-## Vega-lite (if working for you!) in Idyll
-
-[IdyllVegaLite data:corgisTime spec:`{
-  mark:"line",
-  width:600,
-  transform:[
-  {"calculate":"datetime(datum.Years,1)","as":"Years"}
-  ],
-  encoding:{
-    x:{field:"Years", type:"temporal", axis:{title:"Year",format:"%Y"}},
-	y:{field:"United States", type:"quantitative"}
-  } // close encoding
-
-}` /]
-
-Note: you can port to the vega-editor to check out any bugs.
-
-## D3.js (since vega-lite is touchy!)
-
-Start with a variable:
+Idyll posts are designed to support interaction and
+data-driven graphics.
 
 [var name:"state" value:0 /]
 [CustomD3Component className:"d3-component" state:state /]
 [button onClick:`state++`]
-  Click me!
+  Click Me.
 [/button]
 
-We want to use [this example](https://bl.ocks.org/vikkya/75bda04cd0c00e49cbda6cfee8d97aba) to using our data.  What our strategy will be:
+Configuration can be done via the `idyll` field in `package.json`.
 
-1. copy the custom-d3-component.js file we were just commenting
-1. change the names for the "extend" calls to HistogramCustomD3Component
-1. comment out the drawing of the circle update function
-1. replace the drawing of the viewer box (gray box) and initial circle with the example from the basic histogram (using that data)
-1. starting to transition to our data
+## Markup
+
+Idyll is based on Markdown.
+
+You can use familiar syntax
+to create **bold** (`**bold**` ) and *italic* (``*italic*` ) styles,
+
+* lists
+* of
+* items,
+
+```
+* lists
+* of
+* items,
+```
+
+1. and numbered
+2. lists
+3. of items,
+
+
+```
+1. and numbered
+2. lists
+3. of items,
+```
+
+in addition to [hyperlinks](https://idyll-lang.org) and images:
+
+![quill](static/images/quill.svg)
+
+```
+![quill](static/images/quill.svg)
+```
+
+## Components
+
+Components can be embedded using a bracket syntax:
+
+```
+[Range /]
+```
+
+and can contain nested content:
+
+```
+[Equation]e = mc^{2}[/Equation]
+```
+
+Components accept properties:
+
+```
+[Range value:x min:0 max:1 /]
+```
+
+that can be bound to variables to achieve interactivity (more in next section).
+
+
+A variety of components are included by default. See [all the available components](https://idyll-lang.org/docs/components/). You can also use any html tag, for example: `[div] A div! [/div]`.
+
+To create your own, add it to the `components/` folder. There are examples of how to use Idyll with React and D3 based components already included.
+
+
+
+## Interactivity
+
+Here is how you can instantiate a variable and bind it to a component:
+
+[var name:"exampleVar" value:5 /]
+
+[Range min:0 max:10 value:exampleVar /]
+[Display value:exampleVar /]
+
+```
+[var name:"exampleVar" value:5 /]
+
+[Range min:0 max:10 value:exampleVar /]
+[Display value:exampleVar /]
+```
+
+## Learn More
+
+To learn more see the documentation at [https://idyll-lang.org/docs/](https://idyll-lang.org/docs/),
+join our [chatroom](https://gitter.im/idyll-lang/Lobby), or see the project on [GitHub](https://github.com/idyll-lang/idyll).
+
+[hr /]
+
+# Technical Details
+
+## Installation
+
+- Make sure you have `idyll` installed (`npm i -g idyll`).
+- Clone this repo and run `npm install`.
+
+## Developing a post locally
+
+Run `idyll`.
+
+## Building a post for production
+
+Run `idyll build`. The output will appear in the top-level `build` folder. To change the output location, change the `output` option in `package.json`.
+
+## Deploying
+
+Make sure your post has been built, then deploy the docs folder via any static hosting service.
+
+## Dependencies
+
+You can install custom dependencies by running `npm install <package-name> --save`. Note that any collaborators will also need download the package locally by running `npm install` after pulling the changes.
+
+## Added: test vega-lite
+
+[data name:"lakeHuron" source:"LakeHuron.csv" /]
+
+[Table data:lakeHuron /]
+
+
+```
+[IdyllVegaLite data:lakeHuron spec:`{
+  mark: "line",
+  encoding: {
+    x: {
+      field: "time",
+      type: "temporal",
+      axis: {title: "Year", format:"%Y"}
+    },
+    y: {
+      field: "value",
+      type: "quantitative",
+      axis: {title: "Water level"},
+      scale: { domain: [575, 582] }
+    }
+  }
+}` /]
+```
+
+
+[data name:"corg" source:"corgs_per_country_over_time_columns_2020.csv" /]
+
+[Table data:corg /]
+
+```
+[IdyllVegaLite data:corg spec:`{
+  mark: "line",
+  encoding: {
+    x: {
+      field: "Years",
+      type: "temporal",
+      axis: {title: "Year", format:"%Y"}
+    },
+    y: {
+      field: "value",
+      type: "quantitative"}
+      // axis: {title: "Water level"},
+      // scale: { domain: [575, 582] }
+    }
+  }
+}` /]
+```
+
+```
+[IdyllVegaLite data:corg spec:`{
+  mark: "line",
+  encoding: {
+    x: {
+      field: "Years",
+      type: "temporal",
+      axis: {title: "Year", format:"%Y"}
+    },
+    y: {
+      field: "United States",
+      type: "quantitative"
+    }
+  }
+}` /]
+```
+
+[div style:`{backgroundColor: 'green', padding: '20px'}`]Some text[/div]
+
+## d3.js components
+
+Vega-lite not work :(
+
+But!  We can use d3.js to make some interactive visualizations.
+
+To make our own component:
+1. copied `custom-d3-component.js` to `histogram-d3-component.js`
+2. changed the names to extend the class in `histogram`
+3. comment out updateProps function
+4. started putting in an example histogram using d3.js
+
+Example was from [this d3.js histogram](https://bl.ocks.org/vikkya/75bda04cd0c00e49cbda6cfee8d97aba).
 
 [HistogramCustomD3Component className:"d3-component" /]
 
-Using the [select built in](https://idyll-lang.org/docs/component/select):
+Adding in Country as a selection:
 
-```
-[var name:"selectVal" value:"test1" /]
-[Select value:selectVal options:`["test1", "test2"]`  /]
-```
+// [var name:"state" value:0 /]
+
+// [CustomD3Component className:"d3-component" state:state /]
+
+// [button onClick:`state++`]
+
+//  Click Me.
+
+// [/button]
+
+Using the [Idyll Select built in](https://idyll-lang.org/docs/component/select).
 
 [var name:"myCountry" value:"United States" /]
 
-[HistogramButtonCustomD3Component className:"d3-component" country:myCountry /]
-Select a country:
-[Select value:myCountry options:`["United States", "United Kingdom", "South Africa"]` /]
+[HistogramCountryCustomD3Component className:"d3-component" country:myCountry /]
+
+[Select value:myCountry options:`["United States", "United Kingdom", "South Africa"]`  /]
+
+
+
+
+Also adding in a y-axis slider:
+
+[var name:"myCountry2" value:"United States" /] // update the country
+[var name:"mySlider" value:650 /] // update the y-axis
+
+[HistogramCountrySliderCustomD3Component className:"d3-component" country:myCountry2 yheight:mySlider /]
+
+Select country:
+[Select value:myCountry2 options:`["United States", "United Kingdom", "South Africa"]`  /]
+
+Select y-axis height:
+[Range value:mySlider min:0 max:1000 step:1 /]
+[Display value:mySlider /]
+
+
+## Vega-lite (hopefully) working now!
+
+[data name:"corgs" source:"corgiData_countries_subset_2020.json" /]
+
+[Table data:`corgs.slice(0,10)` /]
+
+A working vega-lite plot!
+
+[IdyllVegaLite data:corgs spec:`{
+  mark:"circle",
+  encoding:{
+	x: {field:"countries", type:"nominal"},
+	y: {field:"year", type:"temporal"}
+	}
+}` /]
+
+Add some interactivity to this plot by passing an Idyll-defined variable.
+
+
+// colorBy will determine the color of our points
+
+[var name:"colorBy" value:`{}` /]
+
+[IdyllVegaLite data:corgs spec:`{
+  mark:"circle",
+  encoding:{
+	x: {field:"countries", type:"nominal"},
+	y: {field:"year", type:"temporal"},
+	color:colorBy
+	}
+}` /]
+
+// reference: [button onClick:`myVar += 1`]Click Me![/button]
+
+Color by:
+ [button onClick:`colorBy = {field:"sex", type:"nominal", scale:{"scheme":"category20"}}` ]Sex of Corgi[/button]
+ [button onClick:`colorBy = {}` ]None[/button]
+ 
+We can also use typical vega-lite operations like aggregating, etc.
+
+[IdyllVegaLite data:corgs spec:`{
+  mark:"bar",
+  width:600,
+  encoding:{
+	x: {field:"year", type:"temporal"},
+	y: {aggregate:"count",type:"quantitative", title:"Number of Corgis Born"},
+	// color:colorBy
+	}
+}` /]

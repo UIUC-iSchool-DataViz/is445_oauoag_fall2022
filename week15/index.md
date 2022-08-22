@@ -1,66 +1,68 @@
 ---
 layout: week
 visible: true
-icon: undraw_medical_research_qg4d.svg
+icon: undraw_nakamoto_2iv6.svg
 notitle: true
 examples:
-  - filename: inClass_week15.ipynb
+  - filename: inClass_week16.ipynb
     type: ipynb
     title: In class notebook
     description: Placeholder for in class coding
-  - filename: prep_notebook_week15.ipynb
+  - filename: prep_notebook_wordcloud_part1.ipynb
     type: ipynb
-    title: Prep Notebook, Week 15
-    description: Prep notebook for this week
-  - filename: spring2019_prep_notebook_week13.ipynb
+    title: Prep Notebook, Week 16, Part 1
+    description: Prep notebook for this week, Part 1 - WordClouds
+  - filename: prep_notebook_networks_part2.ipynb
+    type: ipynb
+    title: Prep Notebook, Week 16, Part 2
+    description: Prep notebook for this week, Part 2 - Network data
+  - filename: spring2019_prep_notebook.ipynb
     type: ipynb
     title: Examples from Spring 2019
 data:
-  - filename: single_dicom.h5
+  - filename: othello.txt
+    type: data
+    title: Text corpus from Othello
+    description: Full text from the play Othello from project Guthenburg
+  - filename: facebook_combined_sm000090_000010.txt
     type: dataLink
-    title: Brain Scan (72Mb)
-    description: MRI scan of a brain
-    link: https://uiuc-ischool-dataviz.github.io/spring2019online/week05/data/single_dicom.h5
-  - filename: galaxyFiles.zip
+    title: Broad facebook data
+    description: Several small nodes facebook data
+    link: https://uiuc-ischool-dataviz.github.io/spring2019online/week09/data/facebook_combined_sm000090_000010.txt
+  - filename: facebook_combined_sm000030_000000.txt
     type: dataLink
-    title: Galaxy Particle Simulation files (77Mb)
-    description: Downsampled output files from a particle simulation of a galaxy merger
-    link: https://github.com/UIUC-iSchool-DataViz/is445AOG_fall2020/raw/master/week13/galaxyFiles.zip
-  - filename: IsolatedGalaxy.tar.gz
-    type: dataLink
-    title: Isolated Galaxy dataset (292 Mb)
-    description: A single snapshot in time of a grid simulation of an isolated galaxy 
-    link: http://yt-project.org/data/IsolatedGalaxy.tar.gz
+    title: Major node data
+    description: One major node facebook data
+    link: https://uiuc-ischool-dataviz.github.io/spring2019online/week09/data/facebook_combined_sm000030_000000.txt
 ---
 
-# Scientific Viz & Guest lecture from the Advanced Visualization Lab 
+# Network Visualization & Word clouds
 
-We talked a little bit about publishing, networks, and scientific viz.
-
-Guest lecture from NCSA's [Advanced Visualization Lab](https://avl.ncsa.illinois.edu/).
+Final class, you made it!
 
 <!--
-# Resources
+## Downloads
 
-## Data and Python Libs
+### Data:
 
- 1. Download and unzip [this set of files here (galaxyFiles.zip, 77M)](galaxyFiles.zip)
- 2. Make note of where this unzips -- this is where `solverlibs.py` gets unpacked.
-
- 3. We'll also be using the <a href="http://yt-project.org/data/IsolatedGalaxy.tar.gz" download>Isolated Galaxy dataset (292 Mb)</a> dataset for sci viz today
- 4. We'll also also be using <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week05/data/single_dicom.h5" download>this brain scan data (72Mb)</a>
+ * <a href='https://uiuc-ischool-dataviz.github.io/spring2019online/week09/data/facebook_combined_sm000090_000010.txt' download>Several small nodes facebook data</a>
+ * <a href='https://uiuc-ischool-dataviz.github.io/spring2019online/week09/data/facebook_combined_sm000030_000000.txt' download>One major node facebook data</a>
+ * <a href='https://github.com/UIUC-iSchool-DataViz/spring2019online/tree/master/week09/data'>More facebook data</a>
+ * <a href="othello.txt" download>Text of Othello (othello.txt)</a>
 -->
-
-
- 
 
 ## Optional reading list
 
- 1. VAD Ch. 8.4-8.6: Arrange Spatial Data 
- 2. VAD Ch. 11.6: Manipulate View 
- 3. <a href="https://yt-project.org/">yt docs</a>  
- 4. <a href="https://yt-project.org/doc/visualizing/volume_rendering.html">yt Volume Rendering Tutorial</a>
- 
-Also, here is a slightly more in-depth explaination of path/ray tracing:
+ 1. VAD Ch. 9: Arrange Networks and Trees 
+ 2. VAD, Ch. 13.4.3.1: Reduce Items and Attributes 
+ 3. VAD, Ch. 6: Rules of Thumb 
+ 4. [FDV, Ch. 28: Choosing the right visualization software](https://serialmentor.com/dataviz/choosing-visualization-software.html) 
+ 5. [FDV, Ch. 26: Don't go 3D](https://serialmentor.com/dataviz/no-3d.html) 
+ 6. [FDV, Ch. 25: Avoid line drawings](https://serialmentor.com/dataviz/avoid-line-drawings.html)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/frLwRLS_ZR0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## Extra Resources
+
+ * <a href='https://github.com/UIUC-iSchool-DataViz/spring2019online/tree/master/week09/data'>More facebook data</a>
+ * <a href='https://snap.stanford.edu/data/'>Variety of SNAP datasets</a>
+ * <a href='https://snap.stanford.edu/data/ego-Facebook.html'>We used this SNAP dataset</a>
+ * <a href='https://github.com/jcatw/snap-facebook'>Python Library to parse snap facebook data</a>
