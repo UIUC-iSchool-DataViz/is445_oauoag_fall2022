@@ -4,27 +4,29 @@ visible: true
 icon: undraw_data_trends_b0wg.svg
 notitle: true
 examples:
-  - filename: prep_notes_week02.ipynb
+  - filename: prep_notes_week01.ipynb
     type: ipynb
-    title: Prep Notebook, Week 2
+    title: Prep Notebook, Week 1
     description: Prep notebook for this week
   - filename: test_imports_week01.ipynb
     type: ipynb
     title: Import notebook for HW 1
     description: Notebook for HW 1
-  - filename: inClass_week02.ipynb
+  - filename: inClass_week01.ipynb
     type: ipynb
-    title: In class week 2 notebook
+    title: In class week 1 notebook
     description: Intro to python, plotting
 data:
   - filename: GDP.csv
-    type: data
+    type: dataLink
     title: GDP dataset
     description: GDP dataset from FRED
+    link: https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/main/data/GDP.csv
   - filename: stitch_reworked.png
-    type: data
+    type: dataLink
     title: Stitch Image
     description: Three-color image of stitch
+    link: https://github.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/raw/main/data/stitch_reworked.png
 ---
 
 # Introduction
