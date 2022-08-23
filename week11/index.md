@@ -4,12 +4,12 @@ visible: true
 icon: undraw_good_doggy_4wfq.svg
 notitle: true
 examples:
-  - filename: In Class Idyll Files
+  - filename: In Class Jekyll Files
     type: iodide
     title: In class Idyll materials, Week 13
     description: Updating storage of Idyll files in class
-    link: https://github.com/UIUC-iSchool-DataViz/is445_spring2022/tree/master/week13/inClass
-  - filename: Prep Idyll Files
+    link: https://github.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/tree/master/week12/inClass
+  - filename: Prep Jekyll Files
     type: iodide
     title: Prep Idyll materials, Week 13
     description: We'll be building toward a webpage like <a href="https://jnaiman.github.io/misc/">this</a> today using <a href="https://idyll-lang.org/">Idyll's</a> built-in components. 
