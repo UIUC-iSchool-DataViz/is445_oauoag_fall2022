@@ -11,7 +11,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": 1,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -23,16 +23,16 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 2,
    "metadata": {},
    "outputs": [],
    "source": [
-    "saveFileDir = '/Users/jnaiman/spring2020/week12/corg/'"
+    "saveFileDir = '/Users/jillnaiman/spring2020/week12/corg/'"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 3,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -44,7 +44,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [
     {
@@ -67,7 +67,7 @@
        " 'country_id': 'DEU'}"
       ]
      },
-     "execution_count": 5,
+     "execution_count": 4,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -85,7 +85,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -101,7 +101,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 6,
    "metadata": {},
    "outputs": [
     {
@@ -137,7 +137,7 @@
        "      dtype=object)"
       ]
      },
-     "execution_count": 7,
+     "execution_count": 6,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -155,7 +155,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 7,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -174,7 +174,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 8,
    "metadata": {},
    "outputs": [
     {
@@ -183,7 +183,7 @@
        "(1917, 2020)"
       ]
      },
-     "execution_count": 9,
+     "execution_count": 8,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -194,7 +194,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 9,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -211,7 +211,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 10,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -220,7 +220,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 11,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -233,7 +233,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 12,
    "metadata": {},
    "outputs": [
     {
@@ -242,7 +242,7 @@
        "(621.0, 0.0, 36728.0)"
       ]
      },
-     "execution_count": 13,
+     "execution_count": 12,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -260,7 +260,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 13,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -285,7 +285,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 14,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -294,7 +294,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 15,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -313,7 +313,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 27,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -345,137 +345,24 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
+   "execution_count": 26,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(107, 106)"
+      ]
+     },
+     "execution_count": 26,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
    "source": [
     "# now, other organization\n",
-    "\n",
-    "haveVals = []\n",
-    "\n",
-    "# check non-zeros\n",
-    "for i in range(len(country_codes)):\n",
-    "    v = corgs[:,i] # all dates\n",
-    "    if v.sum() > 0:\n",
-    "        haveVals.append(True)\n",
-    "    else:\n",
-    "        haveVals.append(False)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 19,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# make header of non-zero country names\n",
-    "header = [\"Years\"]\n",
-    "for i in range(len(country_codes)):\n",
-    "    if haveVals[i]:\n",
-    "        header.append(country_names[i])"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 20,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# loop and fill\n",
     "csvFileName = saveFileDir + 'corgs_per_country_over_time_columns_2020.csv'\n",
-    "\n",
-    "with open(csvFileName, 'w') as csvFile:\n",
-    "    writer = csv.writer(csvFile, quoting=csv.QUOTE_ALL)\n",
-    "    writer.writerow(header)\n",
-    "    for i in range(len(dates)):\n",
-    "        row = [dates[i]]\n",
-    "        for j in range(len(country_codes)):\n",
-    "            if haveVals[j]:\n",
-    "                row.append(corgs[i,j].astype('int'))\n",
-    "            \n",
-    "        writer.writerow(row)\n",
-    "    csvFile.close()\n"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 25,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# save totals for each country too\n",
-    "\n",
-    "v = []\n",
-    "for i in range(len(country_names)):\n",
-    "    totalCorg = np.sum(corgs[:,i])\n",
-    "    data = {'country_id': country_codes[i], 'totalCorg':totalCorg}\n",
-    "    v.append(data)\n",
-    "    \n",
-    "saveFilejson = saveFileDir + 'corgs_per_country_2020.json'\n",
-    "f = open(saveFilejson,'w')\n",
-    "f.write(json.dumps(v,indent=2))\n",
-    "f.close()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 22,
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "(104, 242)"
-      ]
-     },
-     "execution_count": 22,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "#corgs[dates, country]\n",
-    "corgs.shape"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 23,
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "(242,)"
-      ]
-     },
-     "execution_count": 23,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "np.sum(corgs, axis=0).shape"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 24,
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "242"
-      ]
-     },
-     "execution_count": 24,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "len(country_names)"
+    "\n"
    ]
   },
   {
