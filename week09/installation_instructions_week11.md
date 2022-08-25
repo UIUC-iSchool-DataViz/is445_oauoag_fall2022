@@ -4,17 +4,21 @@ layout: assignment
 description: Install Jekyll & required pages for creating your own interactive website
 ---
  
-# Installation instructions: Ruby, Ruby Gems & Jekyll
+# Installation instructions: Ruby, Ruby Gems, Jekyll & Our Online Resume Template
+
+## 1. Install Jekyll, Ruby & bundler
 
 Follow the links for your system below.  **NOTE:** You will likely want to do this *outside* of your DataViz conda environment.
 
-## General notes
+### General notes
 
 If you already have Ruby installed (i.e. the "system" Ruby) -- *make sure you check the installation instructions for your relevant system anyway* -- it's possible you will want to install a non-system Ruby version.
 
 If you already have Jekyll installed -- make sure it's the most recent version.
 
-Pay attention if there are "next steps" listed after any of the commands, and make sure you do them.  For example, on a Mac after brew installs you'll see:
+Pay attention if there are "next steps" listed after any of the commands, and make sure you do them.  
+
+#### For example, **on a Mac** after brew installs you'll see:
 
 ```
 ==> Next steps:
@@ -38,127 +42,55 @@ Make sure you run these as well and re-open a Terminal window so that the releva
 
 ### [Instructions for Macs](https://jekyllrb.com/docs/installation/macos/)
 
+For Macs you may have to also install bundler: `gem install jekyll bundler` instead of just Jeykll (`gem install jekyll`), but first try to run the test webpage without this extra install and see if you get any errors.
+
+See above notes about making sure to run a few things in your Terminal window after your install.
+
 ### [Instructions for Windows](https://jekyllrb.com/docs/installation/windows/)
+
+Note here that you also have to install bundler.
 
 ### [Instructions for Ubuntu Linux](https://jekyllrb.com/docs/installation/ubuntu/)
 
 ### [Instructions for Non-Ubuntu Linux](https://jekyllrb.com/docs/installation/other-linux/)
 
 
-## Get relevant webpage templete files (have video starting from here)
-
-git clone, make sure windows folks have git
+## 2. Get Online Resume Template
 
 **Notes for Windows install:**
  * You need to have git installed - <a href="https://git-scm.com/">download link here</a>.  You will have to restart your computer.
-
-
-## Install webpage files
-
-remove any Gemfile.lock, run `bundle install`
-
-## Check that the webpage runs
-
-`bundle excece serve whatever` or with the `-l` option
-
-and then navigate to the appropriate place
-
-## Add all files to your github repo
-
-double check that there is a blank "" for your baseurl
-
-also, update the relevant _config.yml stuff to point to your links
-
-add to your github.io repo and push
-
-make sure that if there is other stuff in your repo you add this to the "ignore" list of things
-
---------------
-
-DON'T NEED I THINK -- this has the ECHO stuff
-```
-==> chruby
-Add the following to the ~/.bash_profile or ~/.zshrc file:
-  source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-
-To enable auto-switching of Rubies specified by .ruby-version files,
-add the following to ~/.bash_profile or ~/.zshrc:
-  source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-```
-
-get the webpage stuff from the github repo
-
-then do bundle install, remove Gemlock file before though
-
-----------
-
-There are a few ways to do this.  Probably the easiest is to download the correct version [from the Node.js page](https://nodejs.org/en/download/).
-
-If you go this route, make sure you follow the final install instructions and have the `npm` executable in your `PATH`.  On my Mac the prompt looks like:
-
-<img src="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445AOG_fall2020/master/week10/images/nodejspat.png">
-
-If you try any of the `npm` commands and it gives you an error about not knowing what `npm` is it is likely because it doesn't know where it is (given the example posted in the image above you could expliclity call `npm` with: `/usr/local/bin/npm`).
-
-
-
-#### Another way: with conda (NOT recommended)
-
-If the "default" way doesn't work for any reason you can try with conda in your terminal/Anaconda prompt:
- 1. `conda activate DataViz`
- 1. `conda install nodejs`
  
-If you go this route, make sure you activate your DataViz environment before using any `npm` calls.
+For Mac, you should have git already installed (but you can install it [here](https://git-scm.com/download/mac) just in case).
 
-#### 1.1 Update npm to latest version if you already have it installed
+**Step 1:** Clone this repository using `git clone https://github.com/jnaiman/online_cv_public.git` in a Terminal or Anaconda Prompt
 
-Do this with:
-```
-npm install -g npm@latest
-```
-or for a specific version:
-```
-npm install -g npm@8.0.0
-```
+<img src="images/gitclone.png" width="900px" alt="clone online cv with git clone command">
 
-**NOTE:** to install things globally (-g) you might have to use `sudo` in front of the `npm` commands.
+You can find this repository URL by navigating to the [online template GitHub repositor](https://github.com/jnaiman/online_cv_public) and copying the URL under the green "Code" button/dropdown.
 
-You can check your version with
+**Step 2:** change to this directory with `cd online_cv_public` in the Terminal/Anaconda Prompt
 
-```
-npm -v
-```
-(mine is 8.0.0)
+<img src="images/cdonlinecv.png" width="600px" alt="cd into online cv directory">
+
+**Step 3:** build the Jekyll page with `bundle install` in the Terminal/Anaconda Prompt
+
+<img src="images/bundleinstall.png" width="700px" alt="install jekyll page with bundle install">
+
+You should see this at the end of the bundle command.
+
+**Step 4:** Serve the site locally with `bundle exec jekyll serve`
+
+<img src="images/servesitelocal.png" width="900px" alt="cd into online cv directory">
+
+**Step 5:** Navigate to the URL listed in a Chrome or Firefox browser -- in the above image this is `http://127.0.0.1:4008/online_cv_public/`.  You should see teh following page pop up:
+
+![picture of running local webpage](images/websitepopup.png)
+
+**Step 6:** Take a screenshot of a side-by-side of your running Terminal/Anaconda Prompt and the served webpage like so:
+
+![submission](images/submissionscreenshot.png)
+
+This screenshot serves as your submission for this portion of the homework assignment.
 
 
-## 2. Use npm to install Idyll & other packages
 
-You'll run these commands in a terminal (Mac) or anaconda prompt (Windows) so make sure you open them up.
-
-**NOTE:** to install things globally (-g) you might have to use `sudo` in front of the `npm` commands.
-
-1. Use `npm` to install Idyll (you might need root privileges to do so)
-```
-npm install -g idyll
-```
-
-1. Create new post with idyll (you can use the defaults)
-```
-idyll create
-```
-1. cd into post directory (with defaults this is `my-idyll-post`)
-1. Install dependencies to install vegalite
-```
-npm install --save vega-lite react react-dom vega
-```
-1. Install vegalite for Idyll
-```
-npm install --save idyll-vega-lite
-```
-1. Test by:
-  * downloading [this index.idyll file](https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_spring2021/master/week10/index.idyll) and replacing the default index.idyll file in your `my-idyll-post` directory
-  * downloading [the LakeHuron.csv file](https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_spring2021/master/week10/data/LakeHuron.csv) and putting this in the `data/` sub-folder in the `my-idyll-post` directory
-  * do `idyll` in your `my-idyll-post` directory and make sure it looks like whats in the test video below
-     * **NOTE:** if you get an error and it won't build try `idyll --compileLibs=true` instead of just `idyll`.  You might get a "BABEL" warning that you can ignore for now.
-  
-<iframe width="560" height="315" src="https://www.youtube.com/embed/J_w9kowGkIs?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
