@@ -27,6 +27,11 @@ Website.](https://chancellor.illinois.edu/land_acknowledgement.html)
 
 Please see the statement about policies related to COVID-19 at the [top of the Syllabus](https://uiuc-ischool-dataviz.github.io/is445_oauoag_fall2022/syllabus.html).
 
+There is a plan if *I* get sick.
+
+notes:
+also mention what happens if I get sick
+
 
 ---
 
@@ -78,7 +83,7 @@ TA: Qiuyan Guo - `qqguo2@illinois.edu`
 TA: Leon Hounnou - `hounnou2@illinois.edu`
  * Office Hours: Mon, Fri 4-6pm (online)
 
-IN ONLINE: https://uiuc-ischool-dataviz.github.io/is445_oauoag_fall2022/
+ONLINE: https://uiuc-ischool-dataviz.github.io/is445_oauoag_fall2022/
 
 notes: 
 
@@ -216,7 +221,7 @@ about these types of data, and how we approach visualizing them.
 
 ---
 
-## Turn to the person next to you/do on your own
+## In a Jamboard (see in-class links)
 
 Visualize the results of your group's collective "data".
 
@@ -995,16 +1000,12 @@ Also, you can look at how different each of the sound-bars are on each link and 
  * allows us to summarize data quickly
  * allows us to search our data quickly
 
----
-
-## An example: I need a volunteer!
-
-notes:
-(This part is a bit of a stunt.  Sorry.)
 
 ---
 
-*Read these numbers:*
+## Example
+
+*Read these numbers:* what meaning do you get from them?
 
 | | |
 |:-|-:|
