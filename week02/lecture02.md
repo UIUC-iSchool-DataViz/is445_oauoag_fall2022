@@ -3,7 +3,13 @@ title: Lecture 2 - Data storage & Operations, Image data
 layout: lecture
 description: >-
  When we draw something on a screen, how do we represent that internally, and how is that translated into pixels? How are values transformed from 0's and 1's into values we can manipulate and understand?
-date: 2022-01-31
+date: 2022-08-31
+---
+
+## Annoucement
+
+<img src="images/career_fair.jpeg">
+
 ---
 
 <br>
@@ -16,15 +22,9 @@ date: 2022-01-31
 
 ## COVID-19 Policies
 
-Please see the statement about policies related to COVID-19 at the [top of the Syllabus](https://uiuc-ischool-dataviz.github.io/is445_spring2022/syllabus.html).
+Please see the statement about policies related to COVID-19 at the [top of the Syllabus](https://uiuc-ischool-dataviz.github.io/is445_oauoag_fall2022/syllabus.html).
 
-### Masks in class (and buildings) are required
-
-### Building status checked at beginning of class (please be on time!)
-
-### Other ways to access course materials (Zoom recordings posted after class)
-
-### If you feel unwell, stay home!
+### If *I* get sick, we have a plan: classes online/recordings
 
 notes:
 couple of reminders -- especially about masks (if its too hard, see Zoom resources!)
@@ -36,13 +36,13 @@ couple of reminders -- especially about masks (if its too hard, see Zoom resourc
 ## How to get help
 
 Jill P. Naiman - `jnaiman@illinois.edu`
- * Office Hours: Tuesdays 11am-12pm **(updated)**; Thursdays 2-3pm (online)
+ * Office Hours: Mon, Wed 10am-11am (online)
 
-TA: Xinhui Hu - `xhu15@illinois.edu`
- * Office Hours: Wednesdays & Fridays 11am-12pm (online)
+TA: Qiuyan Guo - `qqguo2@illinois.edu`
+ * Office Hours: Tues, Thurs, Fri 8:30am-10:30am (online)
  
-TA: Jenna Kim - `jkim682@illinois.edu`
- * Offce Hours: Thursdays 4-5pm; Fridays 2-3pm (online)
+TA: Leon Hounnou - `hounnou2@illinois.edu`
+ * Office Hours: Mon, Fri 4-6pm (online)
  
 Other: 
  * Slack, email
@@ -51,11 +51,11 @@ Other:
 
 ## In summary: where things will be located:
 
- * Canvas - where the grades and assignments will be posted
+ * Canvas: https://canvas.illinois.edu/courses/21951 - where the grades and assignments will be posted
 
- * Course webpage: https://uiuc-ischool-dataviz.github.io/is445_spring2022/ - where lecture slides, notebooks, data & general course info will live.
+ * Course webpage: https://uiuc-ischool-dataviz.github.io/is445_oauoag_fall2022/  - where lecture slides, notebooks, data & general course info will live.
 
- * Slack: https://is445-spring2022.slack.com - the best place to ask questions
+ * Slack: https://is445fall2022.slack.com - the best place to ask questions in the `#general` channel
 
 ---
 
@@ -67,10 +67,10 @@ think is interesting, etc.
 
 _These are meant to be easy points:_ No more than 2-3 sentences are needed in your description.
 
-Please see [TurnItIn](https://uiuc-ischool-dataviz.github.io/is445_spring2022/week03/lecture02_assignment_submission_help.html#/) slides for more info
+Please see [TurnItIn](https://uiuc-ischool-dataviz.github.io/is445_oauoag_fall2022/week02/lecture02_assignment_submission_help.html#/) slides for more info
 
 notes:
-our first one is assigned today, due next week -- remember, I'll pick someone randomly to ask you about yours!
+our first one is assigned today, due next week 
 
 As a reminder: we have TurnItIn in this class, but we really want you to use it as a tool, so you should be able to see your report once you submit and you can look at the same report we will see. How does this work? **go to these slides**
 
@@ -89,7 +89,8 @@ these last two count for ~25% of this hw grade so I'll carefully ignore you if y
 
 ## Homework grading
 
- * Homework points will be listed as reference, all HWs will be graded out of 100%, all HWs are worth the same
+ * All HWs will be graded out of 100%, all HWs are worth the same, however,
+ * Some weeks assignments are broken into multiple parts (that all add up to 100%)
  * We *will* drop a HW score
 
 ---
@@ -121,6 +122,24 @@ There are 3 pathways (that I can see in this course, could be more!)
 
 ---
 
+## Participate in Viz Research
+
+#### University of Illinois study on cinematic-style data visualization
+
+You are invited to participate in a research study to help improve the impact of documentary films and 3D data visualization. Watch a 9-minute video clip of data visualizations from “Solar Superstorms”, narrated by Benedict Cumberbatch, and respond to a 10-minute survey about it.
+
+You’ll be entered into a drawing to win one of 5 gift cards for $30.
+
+Join the study using this link:
+
+https://go.illinois.edu/sciviz
+
+This research project is being conducted by the Advanced Visualization Lab at the NCSA in the University of Illinois at Urbana-Champaign. This project is funded by The Brinson Foundation.
+
+
+
+---
+
 ## Today
 
 <img src="images/data_viz_diagram.png">
@@ -133,7 +152,9 @@ We'll talk a bit about the kinds of data that are out there and their definition
 
 ---
 
-<img src="https://static.wixstatic.com/media/6efa5f_e6f70adbf18e41fd8e369abc4c309563~mv2.png/v1/fill/w_770,h_434,al_c,lg_1,q_85/Types%20of%20Data_Visual_PNG.webp">
+<!-- <img src="https://static.wixstatic.com/media/6efa5f_e6f70adbf18e41fd8e369abc4c309563~mv2.png/v1/fill/w_770,h_434,al_c,lg_1,q_85/Types%20of%20Data_Visual_PNG.webp"> -->
+
+<img src="https://mldoodles.com/eptoobym/2021/10/Data-Types-in-Machine-Learning-1024x1024.png" width=650>
 
 notes:
 So, usually you're probably used to thinking about data like this - numerical or quantitative which is then broken down into discrete & continous.
@@ -142,7 +163,10 @@ Also categorical or qualitative data which is either ordered (ordinal) or unorde
 
 ---
 
-<img src="https://static.wixstatic.com/media/6efa5f_e6f70adbf18e41fd8e369abc4c309563~mv2.png/v1/fill/w_770,h_434,al_c,lg_1,q_85/Types%20of%20Data_Visual_PNG.webp">
+<!-- <img src="https://static.wixstatic.com/media/6efa5f_e6f70adbf18e41fd8e369abc4c309563~mv2.png/v1/fill/w_770,h_434,al_c,lg_1,q_85/Types%20of%20Data_Visual_PNG.webp"> -->
+
+<img src="https://mldoodles.com/eptoobym/2021/10/Data-Types-in-Machine-Learning-1024x1024.png" width=650>
+
 
 We need to dig a little deeper for data viz.
 
