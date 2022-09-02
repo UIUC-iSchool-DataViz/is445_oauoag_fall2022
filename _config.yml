@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: IS445 - Data Viz - BCU/BCG
+title: IS445 - Data Viz - OAU/OAG
 email: jnaiman@illinois.edu
 description: >- # this means to ignore newlines until "baseurl:"
   This is the course website for IS445-OAU-OAG in Fall 2022
