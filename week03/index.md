@@ -4,13 +4,13 @@ visible: true
 icon: undraw_cohort_analysis_stny.svg
 notitle: true
 examples:
-  - filename: prep_notebook_week04.ipynb
+  - filename: prep_notebook_week03.ipynb
     type: ipynb
-    title: Prep Notebook, Week 4
+    title: Prep Notebook, Week 3
     description: Prep notebook for this week
-  - filename: inClass_week04.ipynb
+  - filename: inClass_week03.ipynb
     type: ipynb
-    title: In class notebook, Week 4
+    title: In class notebook, Week 3
     description: Prep notebook for this week
   - filename: fall2019_prep_notebook_furtherExamples_01.ipynb
     type: ipynb
@@ -35,20 +35,20 @@ examples:
     title: spring2019_prep_notebook_week03_part2.ipynb
 data:
   - filename: building_inventory.csv
-    type: dataOtherWeek
+    type: dataLink
     title: Buildings dataset
     description: Illinois buildings dataset
-    week: week03
+    link: https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/main/data/building_inventory.csv
   - filename: michigan_lld.flt
     type: dataLink
     title: Michigan Depth Map (86Mb)
     description: Measurments taken from around Lake Michigan (https://www.ngdc.noaa.gov/mgg/greatlakes/michigan.html)
-    link: https://uiuc-ischool-dataviz.github.io/spring2019online/week05/data/michigan_lld.flt
+    link: https://github.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/raw/main/data/michigan_lld.flt
   - filename: single_dicom.h5
     type: dataLink
     title: Brain Scan (72Mb)
     description: MRI scan of a brain
-    link: https://uiuc-ischool-dataviz.github.io/spring2019online/week05/data/single_dicom.h5
+    link: https://github.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/raw/main/data/single_dicom.h5
 library:
   - filename: palette_colors.py
     type: library
@@ -64,22 +64,6 @@ choose colors and transforms to better suit our data.
 We also did some basics of Pandas last week and we'll continue this week.
 
 Note there are a variety of notebooks from previous iterations of this course listed under the *Materials* subsection of today's lecture.  The "furtherExamples" notebooks are just there as reference, we will not be going through them by hand.
-
-<!-- ## Downloads
-
-### Data:
-
- * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week02/building_inventory.csv" download>Building Inventory CSV file - building_inventory.csv</a>
- * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week05/data/michigan_lld.flt" download>Michigan Depth Map (86Mb) - michigan_lld.flt</a>
- * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week05/data/single_dicom.h5" download>Brain Scan (72Mb) - single_dicom.h5</a>
- -->
-
-<!-- ### Python external libraries
-
-Make sure you save these in the same directory as your jupyter notebook is running in!
-
- * <a href="palette_colors.py" download>Palette Colors (palette_colors.py) - save to notebook folder or modify your path if you know how to do that</a>
- -->
 
 
 ## References
