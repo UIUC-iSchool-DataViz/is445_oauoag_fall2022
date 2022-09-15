@@ -4,13 +4,13 @@ visible: true
 icon: undraw_data_reports_706v.svg
 notitle: true
 examples:
-  - filename: inClass_week06.ipynb
+  - filename: inClass_week05.ipynb
     type: ipynbInClass
-    title: In class Notebook, Week 6
+    title: In class Notebook, Week 5
     description: Prep notebook for this week
-  - filename: prep_notebook_week06.ipynb
+  - filename: prep_notebook_week05.ipynb
     type: ipynb
-    title: Prep Notebook, Week 6
+    title: Prep Notebook, Week 5
     description: Prep notebook for this week
   - filename: fall2019_examples_week05.ipynb
     type: ipynb
@@ -26,12 +26,12 @@ data:
     type: dataLink
     title: The UFO Sitings Dataset (13Mb)
     description: Data about world wide reports of UFO sitings
-    link: https://uiuc-ischool-dataviz.github.io/spring2019online/week04/data/ufo-scrubbed-geocoded-time-standardized-00.csv
+    link:  https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/main/data/ufo-scrubbed-geocoded-time-standardized-00.csv
   - filename: michigan_lld.flt
     type: dataLink
     title: Michigan Depth Map (86Mb)
     description: Measurments taken from around Lake Michigan (https://www.ngdc.noaa.gov/mgg/greatlakes/michigan.html)
-    link: https://uiuc-ischool-dataviz.github.io/spring2019online/week05/data/michigan_lld.flt
+    link:  https://github.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/raw/main/data/michigan_lld.flt
   - filename: nations.json
     type: dataLink
     title: Wealth of Nations Data - nations.json
