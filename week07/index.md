@@ -4,18 +4,14 @@ visible: true
 icon: undraw_Around_the_world_re_n353.svg
 notitle: true
 examples:
-  - filename: inClass_week08.ipynb
+  - filename: inClass_week07.ipynb
     type: ipynb
     title: In class notebook
     description: Placeholder for in class coding
-  - filename: prep_notebook_week08_part1.ipynb
+  - filename: prep_notebook_week07.ipynb
     type: ipynb
-    title: Prep Notebook, Week 8, Part 1
+    title: Prep Notebook, Week 7
     description: Prep notebook for this week, Part 1
-  - filename: prep_notebook_week08_part2.ipynb
-    type: ipynb
-    title: Prep Notebook, Week 8, Part 2
-    description:  Prep notebook for this week, Part 2
   - filename: spring2019_prep_notebook_week07_part1.ipynb
     type: ipynb
     title: spring2019_prep_notebook_week07_part1.ipynb
@@ -30,15 +26,15 @@ data:
     type: dataLink
     title: The UFO Sitings Dataset (13Mb)
     description: Data about world wide reports of UFO sitings
-    link: https://uiuc-ischool-dataviz.github.io/spring2019online/week04/data/ufo-scrubbed-geocoded-time-standardized-00.csv
+    link: https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/main/data/ufo-scrubbed-geocoded-time-standardized-00.csv
   - filename: total_export.csv
     type: dataLink
     title: State export data (8Kb)
     description: Data about exports from each state
-    link: https://uiuc-ischool-dataviz.github.io/is445_spring2021/week06/data/total_export.csv
+    link: https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/main/data/total_export.csv
   - filename: market_map_data.csv
     type: dataLink
-    link: https://uiuc-ischool-dataviz.github.io/is445_spring2022/week07/data/market_map_data.csv
+    link: https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/main/data/market_map_data.csv
     title: Surgery Charges Dataset (37Mb)
     description: Surgery charges in different states
 library:
