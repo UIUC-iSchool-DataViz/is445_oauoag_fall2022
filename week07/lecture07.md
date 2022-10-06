@@ -15,6 +15,17 @@ notes: talk about updates here!
 
 ---
 
+# Final materials/recordings up
+
+notes:
+also, the optional readings in the syllabus have been updated to reflect topics covered in weeks 11-13-ish
+
+recordings aren't 100% correct times, things are split over a few weeks
+
+also, final project is posted -- eventually you will sign up for groups again (for that and Homework 10) but we'll get to that when we get closer to it!
+
+---
+
 ## Where we are: Last week
 
 <img src="images/dataviz_lastweek_t2.png">
