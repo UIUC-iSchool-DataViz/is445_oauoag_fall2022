@@ -1,0 +1,830 @@
+<h2 id="last-week">Last Week</h2>
+
+<p><img src="../week10/images/this_week3.png" /></p>
+
+<hr />
+
+<h2 id="this-week">This Week</h2>
+
+<p><img src="images/this_week3.png" /></p>
+
+<p>notes:
+this week we will discuss how one has to consider the audience of their visualization - is your audience you? your peers? others?</p>
+
+<p>we’ll start linking stuff together in vegalite</p>
+
+<p>if we have time after doing a few more things with javascript &amp; vega-lite, we’ll start in on doing a few things with Jekyll</p>
+
+<hr />
+
+<h2 id="today">Today</h2>
+
+<ol>
+  <li>Viz for Self/Peers/Others</li>
+  <li>Review about final projects</li>
+  <li>More <code class="language-plaintext highlighter-rouge">vega-lite</code> - transformations and calculations</li>
+  <li>More programming in Starboard</li>
+  <li>Intro to Jekyll (if time)</li>
+</ol>
+
+<p>note:
+we will probably not get to Jekyll until next week or week after – thanks for all of your installation efforts!</p>
+
+<hr />
+
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="topic-1-viz-audience">TOPIC 1: Viz Audience</h1>
+
+<hr />
+
+<h2 id="three-classes-of-visualizations">Three Classes of Visualizations</h2>
+
+<ol>
+  <li>Viz for Self</li>
+  <li>Viz for Experts</li>
+  <li>Viz for the Public</li>
+</ol>
+
+<hr />
+
+<h2 id="viz-for-self">Viz for Self</h2>
+
+<p>There are no rules!</p>
+
+<!--<img src="images/madscience.gif" width="400"/>-->
+<p><img src="https://cdn3.hifigif.cc/picture/original/nUE0pUZ6Yl90nUIgLaZhM_M5L_S0YzAioF9HnT9loayWoTkyM_SfFJ5xo_AbnJ5yp_I0nJqypv1moJSfoP5anJLcXltbFTyTnHqWEv5wLlysqTuipz55nJkfMJquoTyhMT9wnTyhMKAyqTyaMKVgp_1uoTjhM_yz/(HiFiGIF.cc)_crazy-laughing-in-front-of-fire-bobs-burger-tina-belcher-dan-mintz-maniac-psycho-mad-scientist-muahaha-evil-flame-hell-l.gif" /></p>
+
+<p>notes:
+Labels don’t matter. Colors don’t have to look nice. Interactivity doesn’t have to be fast. Here we are just trying to get something on screen that represents the data. Often this is challenge enough.</p>
+
+<p>As the designer, you know what choices you have made, so “elegant design” isn’t a huge deal - although don’t go too crazy or you could make things more confusing for yourself.</p>
+
+<hr />
+
+<h2 id="viz-for-self-1">Viz for Self</h2>
+
+<p><img src="images/walsh.gif" width="700" /></p>
+
+<p>notes:
+This is an example from AJ (the in-person instructor). He uses 3D software like Houdini in his “everyday” life and so this is his software of choice.  Here, he used 3D software to make a 2D plot, and arranged points to look like a bar chart even though they were rendered as individual points - aka a scatter plot.</p>
+
+<p>It just had to work, and we used the most convenient software.</p>
+
+<hr />
+
+<h2 id="viz-for-self-2">Viz for Self</h2>
+
+<p><img src="images/L25n128TNG_tmp_gas_metallicity_history.png" width="700" /></p>
+
+<p>notes:
+Here are some examples from my work</p>
+
+<p>There are plots of data from a large scale simulation of the universe.  Here, I’m curious about how the average number of elements heavier than helium in our simulation changes over time.</p>
+
+<hr />
+
+<h2 id="viz-for-self-3">Viz for Self</h2>
+
+<p>name of: L25n512TNG_shenplot_STARS_ylimn0p5_bins_largeEu_1e2_nx050_ny050_sn099.png</p>
+
+<p><img src="images/L25n512TNG_shenplot_STARS_ylimn0p5_bins_largeEu_1e2_nx050_ny050_sn099.png" width="500" /></p>
+
+<p>notes:
+You can even tell from the name of the file (which runs off the page here) that I’m playing with a bunch of things.  For example I’m plotting here stars, but there is no way you’d really get that from the actual plot itself.</p>
+
+<p>These are plots that show an example of how one might “explore” the data - look for relationships.</p>
+
+<hr />
+
+<h2 id="viz-for-self-4">Viz for Self</h2>
+
+<p>Later this became (viz for peers)</p>
+
+<p><img src="images/L75n1820TNG_eufef07065_allMstar_eucut_massweighted_bigrange_rfracAll_histo.png" width="600" /></p>
+
+<p><a href="https://arxiv.org/pdf/1707.03401.pdf">Paper if you’re really curious</a></p>
+
+<p>notes:
+later, that plot became this plot right here which can be thought of as viz-for peers</p>
+
+<p>While its probably not something that you all understand (unless there are some astronomers in our midst) - you can see I’m more careful here about fonts, presentatin, color schemes and actually labeling things</p>
+
+<hr />
+
+<h2 id="viz-for-self-5">Viz for Self</h2>
+
+<p>Let’s talk about exploration.</p>
+
+<ul>
+  <li>What are characteristics of data that would influence how you visualize it?</li>
+  <li>What information do you have that would be visually interesting?</li>
+  <li>What information do you not have that you need to understand the importance of the data?</li>
+</ul>
+
+<p>Example: A banking database where each record is a bank transaction and the fields include date, deposit or withdrawal amount, customer id, and the interest rate of the account.</p>
+
+<p>notes:
+some questions you want to be asking while you are exploring your data with the intent to visualize it</p>
+
+<p>in these examples – what do you think are some interesting things to visualize? what information would a consumer of your viz need to know?</p>
+
+<hr />
+
+<h2 id="viz-for-self-6">Viz for Self</h2>
+
+<p>Let’s talk about exploration.</p>
+
+<ul>
+  <li>What are characteristics of data that would influence how you visualize it?</li>
+  <li>What information do you have that would be visually interesting?</li>
+  <li>What information do you not have that you need to understand the importance of the data?</li>
+</ul>
+
+<p>Example: A spreadsheet of experimental crop growth measurements where each record is a measurement, and the fields include date, plant species, plant id number, number of leaves, plant height, number of internodes, and average leaf length.</p>
+
+<p>notes:
+internodes = the number of “generations” of a plant, aka how many branches come off the main stem.</p>
+
+<p>in these examples – what do you think are some interesting things to visualize? what information would a consumer of your viz need to know?</p>
+
+<hr />
+
+<h2 id="viz-for-self-7">Viz for Self</h2>
+
+<p>Let’s talk about exploration.</p>
+
+<ul>
+  <li>What are characteristics of data that would influence how you visualize it?</li>
+  <li>What information do you have that would be visually interesting?</li>
+  <li>What information do you not have that you need to understand the importance of the data?</li>
+</ul>
+
+<p>Example: A computational simulation of a galaxy where each record is a timestep in the evolution of the 3D grid, and the fields include time, X position, Y position, Z position, gas density, gas temperature, gas metallicity, and number of stars.</p>
+
+<p>notes:
+in these examples – what do you think are some interesting things to visualize? what information would a consumer of your viz need to know?</p>
+
+<hr />
+
+<h2 id="viz-for-self-8">Viz for Self</h2>
+
+<p>What do you want to get out of visualization for yourself?</p>
+
+<ul>
+  <li>Do you want to find meaning?</li>
+  <li>Do you want to understand how to guide further visualizations?</li>
+  <li>Is the story you want to tell already known to you?</li>
+  <li>What <strong>shortcuts</strong> can you take?</li>
+</ul>
+
+<p>notes:
+shortcut ideas … subsampling, delete unused fields, use a simpler tool, manually select outliers by hand instead of doing it procedurally</p>
+
+<p>forget labels that others have to figure out</p>
+
+<p>don’t worry about color schemee</p>
+
+<hr />
+
+<h2 id="viz-for-experts">Viz for Experts</h2>
+
+<p>To design a visualization for experts, you need to analyze how they process information.</p>
+
+<ul>
+  <li>What do they know?</li>
+  <li>What conventions will they assume?</li>
+  <li>Are they able to fill in the blanks of information?</li>
+</ul>
+
+<hr />
+
+<h2 id="viz-for-experts-1">Viz for Experts</h2>
+
+<p><img src="images/sci_tornado.png" width="700" /></p>
+
+<p>notes:
+Here’s a series of visualizations made by or for domain experts that AJ just had lying around on his laptop.</p>
+
+<p>What are some things you notice they have in common?</p>
+
+<hr />
+
+<h2 id="viz-for-experts-2">Viz for Experts</h2>
+
+<p><img src="images/sci_canup.png" width="350" /></p>
+
+<p>notes:
+Here’s a series of visualizations made by or for domain experts that I just had lying around on my laptop.</p>
+
+<p>What are some things you notice they have in common?</p>
+
+<hr />
+
+<h2 id="viz-for-experts-3">Viz for Experts</h2>
+
+<p><img src="images/sci_convection.png" width="700" /></p>
+
+<p>notes:
+Here’s a series of visualizations made by or for domain experts that I just had lying around on my laptop.</p>
+
+<p>What are some things you notice they have in common?</p>
+
+<hr />
+
+<h2 id="viz-for-experts-4">Viz for Experts</h2>
+
+<p><img src="images/sci_flu.png" width="700" /></p>
+
+<p>notes:
+Here’s a series of visualizations made by or for domain experts that I just had lying around on my laptop.</p>
+
+<p>What are some things you notice they have in common?</p>
+
+<hr />
+
+<h2 id="viz-for-experts-5">Viz for Experts</h2>
+
+<p><img src="images/sci_genes.png" width="700" /></p>
+
+<p>notes:
+Here’s a series of visualizations made by or for domain experts that I just had lying around on my laptop.</p>
+
+<p>What are some things you notice they have in common?</p>
+
+<hr />
+
+<h2 id="viz-for-experts-6">Viz for Experts</h2>
+
+<p>Experts often want to interrogate the data themselves.</p>
+
+<p>How can they do that?</p>
+<ul>
+  <li>Linked Dashboards</li>
+  <li>Side-by-side comparison plots</li>
+  <li>Text annotation with specific values listed</li>
+  <li>Color bar annotation</li>
+</ul>
+
+<p>notes:
+ask students - other ideas? what about interactivity? (Interactivity needs to be decent)</p>
+
+<hr />
+
+<h2 id="viz-for-experts-7">Viz for Experts</h2>
+
+<p>Experts are looking to isolate variables to make scientific conclusions.</p>
+
+<p>How can we make visualizations more analytical?</p>
+<ul>
+  <li>Reduce the dimensionality of the image (slices)</li>
+  <li>Viewpoint from “outside the box”</li>
+  <li>Extremely high contrast color choices (or highlight different features)</li>
+</ul>
+
+<p>notes:
+ask students - other ideas? What about animated data?</p>
+
+<hr />
+
+<h2 id="viz-for-the-public">Viz for the Public</h2>
+
+<p>This is what you’re most accustomed to, because usually YOU are the public.</p>
+
+<p><img src="images/basedonatruestory.jpg" width="700" /></p>
+
+<p>notes:
+Who here is an expert on the historical accuracy of movies? Do you think this visualization was created for those experts? Or was it created for you? How can you tell?</p>
+
+<hr />
+
+<h2 id="jargon">Jargon</h2>
+
+<iframe src="https://player.vimeo.com/video/206139648" width="640" height="360" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<p><a href="https://vimeo.com/206139648">Jaret before and after</a> from <a href="https://vimeo.com/aldacenter">Alan Alda Center</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+<p>notes:
+so here is an example of a scientist and, in a typical scientist fashion, using a  lot of jargon</p>
+
+<p>but then after taking some improv he’s able to communicate more effectively to the public</p>
+
+<hr />
+
+<h2 id="jargon-1">Jargon</h2>
+
+<p>Definition: Special words or expressions that are used by a particular profession or group and are difficult for others to understand.</p>
+
+<p><img src="images/hurricane.jpg" width="400" /></p>
+
+<p>notes:
+When working with experts on their data, they will often try to use words that are specific to their field. As a data communicator, it’s your job to decipher that jargon and make it more approachable to the public.</p>
+
+<hr />
+
+<h2 id="jargon-2">Jargon</h2>
+
+<p><img src="images/upgoerfive.png" width="600" /></p>
+
+<p><a href="https://xkcd.com/1133/">xkcd.com/1133</a></p>
+
+<p>notes:
+This XKCD webcomic makes fun of how much jargon scientists use. He tries to explain NASA’s Saturn V rocket using only the 1000 most common words in the English language.</p>
+
+<p>He actually wrote a whole book about science this way called “Thing Explainer.”</p>
+
+<hr />
+
+<h2 id="jargon-3">Jargon</h2>
+
+<p><a href="https://xkcd.com/simplewriter/">Simple Writer</a></p>
+
+<p>notes:
+And here’s a neat tool he created to help you write your own!</p>
+
+<p>Before:
+“The Advanced Visualization Lab creates cinematic treatments of supercomputer data for immersive displays.”</p>
+
+<p>After:
+“The very good picture making team creates movies of huge computer information for screens you can be inside of.”</p>
+
+<hr />
+
+<h2 id="storytelling">Storytelling</h2>
+
+<p>Let’s just get it out there: humans don’t respond to data. They respond to stories.</p>
+
+<p>Which of these do you care about more?</p>
+<ul>
+  <li>Global average atmospheric carbon dioxide is 405 ppm.</li>
+  <li>Polar bears are dying because the ice they use to hunt is melting.</li>
+</ul>
+
+<p>notes:
+In visualization, we really want to tell a story, not just a list of facts.</p>
+
+<p><strong>plug for data storytelling class!</strong></p>
+
+<hr />
+
+<h2 id="storytelling-1">Storytelling</h2>
+
+<p>Why is that?</p>
+
+<p><img src="images/storytelling.jpg" /> <!-- width="1000"/>--></p>
+
+<p>notes:
+Emotional response to storytelling is an evolutionary trait humans developed to form stronger social bonds and learn from each other’s experience.</p>
+
+<hr />
+
+<h2 id="storytelling-2">Storytelling</h2>
+
+<p>Freytag’s Pyramid</p>
+
+<p><img src="images/freytag.png" width="700" /></p>
+
+<p>notes:
+A story needs setup, conflict, and resolution. One thing many novice storytellers forget is to have a resolution or ending. You need to wrap it up in a neat package!</p>
+
+<p>aside - “denouement” is one of my favorite words</p>
+
+<hr />
+
+<h2 id="storytelling-3">Storytelling</h2>
+
+<p>Characters and Conflict</p>
+<ul>
+  <li>People as subjects: Two political candidates are battling for office</li>
+  <li>People as researchers: Dr. Smith is trying to cure cancer</li>
+  <li>Objects as characters: The photons are trying to push their way to the sun’s surface</li>
+</ul>
+
+<p>notes:
+each story is going to have different sorts of characters and different kinds of conflicts</p>
+
+<p>here are a few examples - you can even make scientific data into a story!  Don’t you really want to root for the photons to make it out of the sun?</p>
+
+<hr />
+
+<h2 id="know-your-audience">Know your Audience</h2>
+
+<iframe width="853" height="480" src="https://www.youtube.com/embed/opqIa5Jiwuw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>notes:
+so, we won’t watch this whole thing, but it is worth checking out how the jargon/language changes when he’s talking to different groups of folks</p>
+
+<hr />
+
+<h2 id="know-your-audience-1">Know your Audience</h2>
+
+<p>What do you know about them?</p>
+<ul>
+  <li>Age</li>
+  <li>Nationality</li>
+  <li>Occupation</li>
+  <li>Affiliation with a Special Interest / Organization</li>
+  <li>Or is it literally EVERYBODY (web publishing)</li>
+</ul>
+
+<p>notes:
+You can hone your narrative for certain audiences. If it’s the broadest audience, like for journalism shared online, you need to keep in mind that there will be children, grandparents, experts, politicians, people with money, etc all in the audience.</p>
+
+<hr />
+
+<h2 id="visualization-for-the-public">Visualization for the Public</h2>
+
+<p>Images can be more powerful than words, text, and numbers. Images can tell stories.</p>
+
+<p><img src="images/mlkjr.jpg" width="700" /></p>
+
+<p>notes:
+What can you say about this event given the picture? How is this different from an average day on the National Mall in DC?</p>
+
+<p>What is the story of this photograph?</p>
+
+<p>notice that you need the CONTEXT of US history to “get” this story however</p>
+
+<hr />
+
+<h2 id="visualization-for-the-public-1">Visualization for the Public</h2>
+
+<p>Context is vital for the public.</p>
+<ul>
+  <li>Embed multiple datasets</li>
+  <li>Place something familiar to relate to the unfamiliar</li>
+  <li>Smooth transitions so you can see where you’ve come from and where you’re going to</li>
+</ul>
+
+<p>notes:
+This is different from a visualization for Experts where you usually want to isolate the dataset.</p>
+
+<p>With experts, you can asssume some background of understanding.  You might start a presentation or paper with a background summary, but based on the field you don’t have to explain as much.  For example, if I’m giving a astronomy talk, I can assume folks know the difference between newtonian gravity and general relativistc treatments and roughly when each apply (GR for going fast, or near big things).</p>
+
+<hr />
+
+<h2 id="visualization-for-the-public-2">Visualization for the Public</h2>
+
+<p>Context is vital for the public.</p>
+
+<p><img src="images/canup.gif" width="600" /></p>
+
+<p>notes:
+The AVL created this sequence for a movie, which originally moved much slower on a large screen, and had a narrator explaining the sequence. Someone recaptured it and made it into a gif, sharing it on reddit with the caption “A simulation of the Earth’s moon being formed.”</p>
+
+<p>What context might have been lost?</p>
+
+<p>How well does the imagery speak for itself?</p>
+
+<hr />
+
+<h2 id="visualization-for-the-public-3">Visualization for the Public</h2>
+
+<p>Identifying the narrative</p>
+<ul>
+  <li>Do you first find data, or first find a story?</li>
+  <li>What is the difference between the data narrative and a narrative for the public?</li>
+</ul>
+
+<p>notes:
+In visualization for the public, typically we will start with a dataset, and then build a narrative around it, and seek out more data to build context.</p>
+
+<p>Data narrative = what the data collector is researching</p>
+
+<p>Public narrative = what makes an interesting story and provides context</p>
+
+<p>This is different than viz for experts where you are typically talking about the dataset you have been working with specifically.</p>
+
+<hr />
+
+<h2 id="visualization-for-the-public-4">Visualization for the Public</h2>
+
+<ol>
+  <li>Aesthetics Matter</li>
+  <li>Interactivity should not have any lag or latency</li>
+  <li>Relative values are often more important than specific values</li>
+  <li>Limit the amount of text/reading</li>
+  <li>Limit the amount of information being packed in</li>
+</ol>
+
+<hr />
+
+<h2 id="visualization-for-the-public-5">Visualization for the Public</h2>
+
+<ul>
+  <li><a href="https://projects.fivethirtyeight.com/2018-midterm-election-forecast/senate/">Election Forecast - fivethirtyeight</a></li>
+  <li><a href="https://theblog.okcupid.com/exactly-what-to-say-in-a-first-message-2bf680806c72">Online Dating - okCupid</a></li>
+  <li><a href="https://www.reddit.com/r/dataisbeautiful/comments/azjti7/leonardo_dicaprio_refuses_to_date_a_woman_over_25/">DiCaprio Love Life - reddit</a></li>
+</ul>
+
+<p>notes:
+What are the narratives of these visualizations? How are they different than just a list of facts?</p>
+
+<hr />
+
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="topic-2-final-projects">TOPIC 2: Final Projects</h1>
+
+<hr />
+
+<h2 id="final-project">Final Project</h2>
+
+<p>There are three components, turned in the last three weeks of class.</p>
+
+<p>You will have three components:</p>
+
+<ol>
+  <li>Viz for Self (Due April 11)</li>
+  <li>Viz for Peers (Due April 18)</li>
+  <li>Viz for Others (Due April 25 (for feedback), May 2 (final))</li>
+</ol>
+
+<p>Be aware:</p>
+<ul>
+  <li>No extensions for these assignments.</li>
+  <li>There is a group-submission option, however there will substantial extra work.</li>
+</ul>
+
+<p>note:
+there are NO extensions available – you can’t use one of your three HW extensions for these components</p>
+
+<hr />
+
+<h2 id="final-project-part-1--individual">Final Project: Part 1 – Individual</h2>
+
+<p>Submit in a Jupyter notebook.</p>
+
+<ul>
+  <li>Identify a dataset to explore.
+    <ul>
+      <li>This will be iterative!  You probably won’t get one you like on the first
+try.</li>
+      <li>Check out sources like <a href="https://data.world/">data.world</a>,
+<a href="https://data.illinois.gov/">data.illinois.gov</a>,
+<a href="https://data.gov/">data.gov</a>,
+<a href="https://developer.marvel.com/">developer.marvel.com</a>,
+<a href="https://databank.illinois.edu/">IDB</a>, etc.</li>
+      <li>or the dataset doc that <a href="https://docs.google.com/document/d/15UJinT5XokAHXd9fQAYD8f6d3vEkR6kJMq8kswmkOhY/edit?usp=sharing">lives right here</a></li>
+    </ul>
+  </li>
+  <li>Explore the dataset in a Jupyter notebook.  Make sure you include things that did and did not work.</li>
+  <li>Summarize the characteristics of the dataset in words: what does it
+represent, what are the fields/columns/rows, what data types are they, etc</li>
+</ul>
+
+<p>note:
+this will be the overview in general if you are doing an individual submission, for group we’ll look at the requirements in a moment on the Canvas page</p>
+
+<hr />
+
+<h2 id="final-project-part-1--individual-cont">Final Project: Part 1 – Individual (cont)</h2>
+
+<p>Your datasets need to be submitted as well.  To do this, include this
+information in your Jupyter notebook:</p>
+
+<ul>
+  <li>What is the “name” of the dataset?</li>
+  <li>Where did you obtain it?</li>
+  <li>Where can we obtain it?  (i.e., URL)</li>
+  <li>What is the license of the dataset?  What are we allowed to do with it?</li>
+  <li>How big is it in file size and in items?</li>
+  <li>Make a simple plot showing a relationship of interest.  You can use matplotlib or pandas (or other). Don’t worry about colors, labels or anything else of that nature!</li>
+</ul>
+
+<hr />
+
+<h2 id="final-project-part-1--individual-cont-cont">Final Project: Part 1 – Individual (cont, cont)</h2>
+
+<p>You can share raw data sets and sources, ask questions about reading/modifying the dataset and post code to do so <strong>that isn’t working</strong>.</p>
+
+<p>Please do not share processed or cleaned datasets online.</p>
+
+<hr />
+
+<h2 id="final-project-part-2">Final Project: Part 2</h2>
+
+<p>Submit in a Jupyter notebook.</p>
+
+<p>See Assignment description for more details.</p>
+
+<hr />
+
+<h2 id="final-project-part-3">Final Project: Part 3</h2>
+
+<p>Visualization for the public – see Assignment description for more details.</p>
+
+<p>You will submit this as your final project and get some feedback – both from the instructors and in the forum.</p>
+
+<p>You will also provide feedback for 3 other students/groups (more on this later).</p>
+
+<hr />
+
+<h2 id="final-project-part-3-cont">Final Project: Part 3 (cont)</h2>
+
+<p>You will submit a link to a github pages site or other webpage constructed in Javascript+HTML that you/your group has constructed.</p>
+
+<p>This component will include a “for others” visualization that is deeply
+narrative with appropriate interactive (or static) content which is sharable on a
+website.</p>
+
+<p>Some possible ways to approach this:</p>
+
+<ul>
+  <li>Jekyll+Altair (see template)</li>
+  <li>Raw HTML + Javascript</li>
+  <li>We will <em>not</em> be accepting jupyter notebooks/mybinder links this semester</li>
+</ul>
+
+<hr />
+
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="topic-3-more-vega-lite">TOPIC 3: More <code class="language-plaintext highlighter-rouge">vega-lite</code></h1>
+
+<hr />
+
+<h2 id="today-1">Today</h2>
+
+<p>Vega-lite - II</p>
+<ul>
+  <li>Marks - more</li>
+  <li>Selections</li>
+  <li>Transformations</li>
+  <li>Computations</li>
+</ul>
+
+<hr />
+
+<h2 id="vega-lite---i">Vega-Lite - I</h2>
+
+<p>Recall that vega-lite is defined in a JSON specification.  This specification will typically take a form similar to this:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="err">..</span><span class="w"> </span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transform"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">..</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"mark"</span><span class="p">:</span><span class="w"> </span><span class="err">..</span><span class="w"> </span><span class="p">,</span><span class="w">
+  </span><span class="nl">"selection"</span><span class="p">:</span><span class="w"> </span><span class="err">..</span><span class="w"> </span><span class="p">,</span><span class="w">
+  </span><span class="nl">"encoding"</span><span class="p">:</span><span class="w"> </span><span class="err">..</span><span class="w"> </span><span class="p">,</span><span class="w">
+  </span><span class="nl">"config"</span><span class="p">:</span><span class="w"> </span><span class="err">..</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="vega-lite---i-embedded">Vega-Lite - I: Embedded</h2>
+
+<p>We principally used a vega-lite “embed” mechanism:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">embedded</span> <span class="o">=</span> <span class="nx">vegaEmbed</span><span class="p">(</span><span class="dl">'</span><span class="s1">#vis</span><span class="dl">'</span><span class="p">,</span> <span class="nx">yourVlSpec</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>We are also able to specify a configuration variable to this at the config
+option.  (<a href="https://github.com/vega/vega-embed">Details</a>)  You may find it
+useful to update the <code class="language-plaintext highlighter-rouge">actions</code> option in <code class="language-plaintext highlighter-rouge">opt</code>, which controls which items are
+available in the menu:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">embedded</span> <span class="o">=</span> <span class="nx">vegaEmbed</span><span class="p">(</span><span class="dl">'</span><span class="s1">#vis</span><span class="dl">'</span><span class="p">,</span> <span class="nx">yourVlSpec</span><span class="p">,</span> <span class="p">{</span><span class="dl">'</span><span class="s1">actions</span><span class="dl">'</span><span class="p">:</span> <span class="kc">false</span><span class="p">});</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="vega-lite---i-embedded-1">Vega-Lite - I: Embedded</h2>
+
+<p>The object returned by <code class="language-plaintext highlighter-rouge">vegaEmbed</code> is a
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code class="language-plaintext highlighter-rouge">Promise</code></a>.
+This means that when you access it, it may not <em>yet</em> be available – so instead
+of actually calling on it, we supply a function to be called <em>at some point</em>
+when it is ready – when the promise has been <strong>resolved</strong>.  This function will
+be called with that object.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">somePromiseObject</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">resolvedObject</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">resolvedObject</span><span class="p">.</span><span class="nx">doSomething</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>(This type of syntax, for deferring actions to the future, is very common in
+Javascript.)</p>
+
+<hr />
+
+<h2 id="vega-lite---ii">Vega-Lite - II</h2>
+
+<p>Last week we discussed marks and encodings.</p>
+
+<p>This week we will continue with marks, adding on transformations and selections.</p>
+
+<hr />
+
+<h2 id="marks---i">Marks - I</h2>
+
+<p>vega-lite has numerous different <code class="language-plaintext highlighter-rouge">mark</code> types.  We can break these down by the type of data they can represent.  We will only consider “primitive” marks today.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">area</code> &amp; <code class="language-plaintext highlighter-rouge">line</code></li>
+  <li><code class="language-plaintext highlighter-rouge">bar</code> &amp; <code class="language-plaintext highlighter-rouge">rect</code></li>
+  <li><code class="language-plaintext highlighter-rouge">point</code> &amp; <code class="language-plaintext highlighter-rouge">circle</code> &amp; <code class="language-plaintext highlighter-rouge">square</code></li>
+  <li><code class="language-plaintext highlighter-rouge">rule</code> &amp; <code class="language-plaintext highlighter-rouge">text</code></li>
+  <li><code class="language-plaintext highlighter-rouge">tick</code></li>
+  <li><code class="language-plaintext highlighter-rouge">geoshape</code></li>
+</ul>
+
+<p>We will demonstrate several of these using our datasets, but first we need to learn how to transform data.</p>
+
+<hr />
+
+<h2 id="transformations---i">Transformations - I</h2>
+
+<p>At the <code class="language-plaintext highlighter-rouge">view</code>-level of your definition, you can specify transformations that modify, filter, or reshape the data.</p>
+
+<p>At the top level, we specify a transformation.  We can transform data within a given dataset (by specifying a new attribute of each data point) or by reshaping the data.</p>
+
+<p>The types of transformations we will cover today are <code class="language-plaintext highlighter-rouge">filter</code> and <code class="language-plaintext highlighter-rouge">calculate</code>.</p>
+
+<hr />
+
+<h2 id="transformations---ii">Transformations - II</h2>
+
+<p>We apply a <code class="language-plaintext highlighter-rouge">filter</code> transform by specifying the field to filter on and the filtering characteristic.  This can be a selection, an expression, or a logical definition.  We will address selection and expression filtering later.</p>
+
+<hr />
+
+<h2 id="transformations---iii">Transformations - III</h2>
+
+<p>A logical filtering operation might look like one of these:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"transform"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="nl">"filter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eye_color"</span><span class="p">,</span><span class="w"> </span><span class="nl">"oneOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"blue"</span><span class="p">,</span><span class="w"> </span><span class="s2">"brown"</span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="nl">"filter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"age"</span><span class="p">,</span><span class="w"> </span><span class="nl">"lte"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>We can use <code class="language-plaintext highlighter-rouge">lt</code>, <code class="language-plaintext highlighter-rouge">gt</code>, <code class="language-plaintext highlighter-rouge">lte</code>, <code class="language-plaintext highlighter-rouge">gte</code>, <code class="language-plaintext highlighter-rouge">eq</code>, <code class="language-plaintext highlighter-rouge">oneOf</code>, <code class="language-plaintext highlighter-rouge">range</code> and <code class="language-plaintext highlighter-rouge">valid</code>.</p>
+
+<hr />
+
+<h2 id="transformations---iv">Transformations - IV</h2>
+
+<p>We can also compute a new field using the <code class="language-plaintext highlighter-rouge">calculate</code> transform.  This is an expression that is evaluated on every data point, which is supplied as the variable <code class="language-plaintext highlighter-rouge">datum</code> to the expression.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"transform"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="nl">"calculate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"datum.age / 7"</span><span class="p">,</span><span class="w"> </span><span class="nl">"as"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dog_years"</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="selections---i">Selections - I</h2>
+
+<p>Selections are defined with <em>names</em> – this seems to be the most common stumbling block.  You get to choose the name!</p>
+
+<p>We use selections in one of a few ways.</p>
+
+<ul>
+  <li>We can conditionally encode data – for instance, change visibility, or alpha, or color.</li>
+  <li>We can use selections as input for filtering data.  Typically this is done with one plot showing unfiltered data and another using a filter from that selection.</li>
+  <li>Scale a domain based on a selection</li>
+</ul>
+
+<hr />
+
+<h2 id="selections---ii">Selections - II</h2>
+
+<p>There are three types of selections:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">single</code> – selecting a single point,</li>
+  <li><code class="language-plaintext highlighter-rouge">multi</code> – multiple points</li>
+  <li><code class="language-plaintext highlighter-rouge">interval</code> – collections of values along encoding axes</li>
+</ul>
+
+<p>We will focus on the <code class="language-plaintext highlighter-rouge">interval</code> selection.</p>
+
+<hr />
+
+<h2 id="selections---iii">Selections - III</h2>
+
+<p>We can define a box-based selector that operates along the x axis by specifying which encoding it is linked to.  Here, we name it <code class="language-plaintext highlighter-rouge">valrange</code>, but we can choose whatever name we like.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"selection"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"valrange"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"interval"</span><span class="p">,</span><span class="w">
+                 </span><span class="nl">"encodings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"x"</span><span class="p">]</span><span class="w">
+                 </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Let’s try this.</p>
+
+<hr />
+
+<h1 id="back-to-starboard">Back to Starboard!</h1>
+
