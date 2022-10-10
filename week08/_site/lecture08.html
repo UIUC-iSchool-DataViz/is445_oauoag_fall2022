@@ -1,0 +1,733 @@
+<h1 id="final-materialsrecordings-up">Final materials/recordings up</h1>
+
+<p>notes:
+also, the optional readings in the syllabus have been updated to reflect topics covered in weeks 11-13-ish</p>
+
+<p>recordings aren’t 100% correct times, things are split over a few weeks</p>
+
+<p>also, final project is posted – eventually you will sign up for groups again (for that and Homework 10) but we’ll get to that when we get closer to it!</p>
+
+<hr />
+
+<h2 id="last-week">Last Week</h2>
+
+<p><img src="images/last_week2.png" /></p>
+
+<p>notes:
+last week we discussed maps and mappable data</p>
+
+<hr />
+
+<h2 id="this-week">This Week</h2>
+
+<p><img src="images/this_week3.png" /></p>
+
+<p>notes: 
+this week we’ll finally start dipping our toes into Javascript with some seriousness</p>
+
+<p>Luckily, will all of our usage of bqplot and grammar of graphics we are well equipt to do this!</p>
+
+<p>in previous iterations of the class we used an online notebook host called Iodide to do this, but it is no longer supported so we are going to use a different one called Starboard</p>
+
+<p>I’ve kept some of the links to old Iodide prep notebooks in the extended resources in case you are curious, but it will be very similar to stuff we will be doing using Starboard</p>
+
+<hr />
+
+<h2 id="today">Today</h2>
+
+<ol>
+  <li>Choosing your viz</li>
+  <li>Intro to Vega/Vega-lite</li>
+  <li><del>Iodide</del> Starboard</li>
+</ol>
+
+<hr />
+
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="topic-1-choosing-your-viz">TOPIC 1: Choosing your viz</h1>
+
+<p>notes:
+we’ve gone through a bunch of different sorts of viz, so its worth taking a moment to think about which kind to use in each instance</p>
+
+<hr />
+
+<h2 id="composition">Composition</h2>
+
+<p>Don’t use a pie chart.</p>
+
+<!-- .slide: data-background-image="images/piechart.png" data-background-size="auto 65%" data-background-position="right 50% bottom 50%" -->
+
+<p>notes:
+pie charts force you to analyze things by area or angle, which are multidimensional attributes that are easy to confuse.</p>
+
+<p>which is the most popular zoo animal in this pie chart? Elephants, otters, or lions?</p>
+
+<hr />
+
+<h2 id="composition-1">Composition</h2>
+
+<p>Don’t use a pie chart.</p>
+
+<!-- .slide: data-background-image="images/piechartlabels.png" data-background-size="auto 65%" data-background-position="right 50% bottom 50%" -->
+
+<p>notes:
+we can make a marginal improvement by labeling the values.</p>
+
+<p>But we wouldn’t be doing visualization if we were interested in just reading text.</p>
+
+<hr />
+
+<h2 id="composition-2">Composition</h2>
+
+<p>Don’t use a pie chart.</p>
+
+<!-- .slide: data-background-image="images/3dpiechart.png" data-background-size="auto 65%" data-background-position="right 50% bottom 50%" -->
+
+<p>notes:
+And if 2-dimensional area is difficult to understand, then 3-dimensional volume is even worse.</p>
+
+<p>3 dimensional values violate the principle of proportional ink, which states that:</p>
+
+<p>The sizes of shaded areas in a visualization need to be proportional to the data values they represent.</p>
+
+<hr />
+
+<h2 id="alternatives">Alternatives</h2>
+
+<!-- .slide: data-background-image="images/donutchart.png" data-background-size="auto 65%" data-background-position="right 50% bottom 50%" -->
+
+<p>notes:
+Some people will try to sell you on a modified version of a pie chart called a donut chart that has a hole in the middle. This is a slight improvement because it helps you see the values in the circle as 1-dimensional arc length instead of area.</p>
+
+<p>But circles are still hard to decipher.</p>
+
+<hr />
+
+<h2 id="alternatives-1">Alternatives</h2>
+
+<!-- .slide: data-background-image="images/treemap.png" data-background-size="auto 65%" data-background-position="right 50% bottom 50%" -->
+
+<p>notes:
+We can reduce some of the confusion associated with using circles by creating proportional <em>rectangular</em> area. Now we can compare along the dimensions of height and width for certain values.</p>
+
+<p>But area is still problematic because it asks us to compare two dimensions - width and height - simultaneously.</p>
+
+<hr />
+
+<h2 id="alternatives-2">Alternatives</h2>
+
+<!-- .slide: data-background-image="images/barchart.png" data-background-size="auto 65%" data-background-position="right 50% bottom 50%" -->
+
+<p>notes:
+you can show comparitive values more effectively with a bar chart though. These values are easily compared along just one dimension.</p>
+
+<hr />
+
+<h2 id="alternatives-3">Alternatives</h2>
+
+<!-- .slide: data-background-image="images/waterfallchart.png" data-background-size="auto 65%" data-background-position="right 50% bottom 50%" -->
+
+<p>notes:
+there are really quite a few alternatives. There are many ways to show data stacking up progressively. This waterfall chart shows how each value is part of a whole, which was sort of the idea of the pie chart.</p>
+
+<hr />
+
+<h2 id="comparison">Comparison</h2>
+
+<!-- .slide: data-background-image="images/columnchart.png" data-background-size="auto 65%" data-background-position="right 50% bottom 50%" -->
+
+<p>notes:
+to compare values from multiple sources, you could use collected columns</p>
+
+<hr />
+
+<h2 id="comparison-1">Comparison</h2>
+
+<!-- .slide: data-background-image="images/stackedcolumnchart.png" data-background-size="auto 65%" data-background-position="right 50% bottom 50%" -->
+
+<p>notes:
+Or to show they’re part of a whole, use a stacked column chart</p>
+
+<p>I personally find these a bit hard to decifer, but other viz folks like them a lot – might be a personal choice type thing.</p>
+
+<hr />
+
+<h2 id="comparison-2">Comparison</h2>
+
+<!-- .slide: data-background-image="images/stackedareachart.png" data-background-size="auto 65%" data-background-position="right 50% bottom 50%" -->
+
+<p>notes:
+or to show a time-series, use connected lines that stack on top of each other to show area across the whole canvass. This shows you trends and specific vertical values.</p>
+
+<p>same issues with this here as far as stacking, but again, people like it!</p>
+
+<hr />
+
+<h2 id="comparison-3">Comparison</h2>
+
+<p>JUST NOT THIS!</p>
+
+<p><img src="images/comparepiecharts.png" width="900" /></p>
+
+<p>notes:
+Just do not compare pie charts!</p>
+
+<p>Zomygod what is even happening right now.</p>
+
+<hr />
+
+<h2 id="hierarchical-data">Hierarchical data</h2>
+
+<!-- .slide: data-background-image="images/hierarchical_zoos.png" data-background-size="auto 65%" data-background-position="right 50% bottom 50%" -->
+
+<p>notes:
+Sometimes we want to show data in a proportion and show connections.
+This often happens for hierarcical data.</p>
+
+<p>Here in this example we want to show proportions of land based mammals that
+are popular at the zoo and then as we move out we subdivide by the individual
+animal species.</p>
+
+<hr />
+
+<h2 id="hierarchical-data-example-packages">Hierarchical data: example packages</h2>
+
+<ul>
+  <li>Sunbursts (e.g., <a href="https://jiffyclub.github.io/snakeviz/">snakeviz</a> )</li>
+  <li>Nested box area (e.g., <a href="https://kcachegrind.github.io/html/Home.html">callgrind</a> ) - for
+ showing flowchart like structures for things like code programs</li>
+</ul>
+
+<table>
+<tr>
+<td>
+<img src="images/sunburst.png" width="450" /></td><td><img src="images/callgrind.gif" width="450" /></td>
+</tr>
+</table>
+
+<p>notes:
+For heirarchical data, you can nest some of these other formats.</p>
+
+<hr />
+
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="topic-2-intro-to-vegavega-lite">TOPIC 2: Intro to Vega/Vega-lite</h1>
+
+<hr />
+
+<h2 id="engines">Engines</h2>
+
+<p>Thus far we have used <code class="language-plaintext highlighter-rouge">bqplot</code> as our primary declaritive method, but we’ll start looking at <code class="language-plaintext highlighter-rouge">vega-lite</code> this week</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">bqplot</code> - both imperative &amp; declaritive methods</li>
+  <li><code class="language-plaintext highlighter-rouge">vega-lite</code> - declaritive</li>
+</ul>
+
+<hr />
+
+<h2 id="vega-lite">vega-lite</h2>
+
+<p>vega-lite is a high-level method for describing visualizations independently of
+their data.</p>
+
+<p>We will be exploring this using <a href="https://starboard.gg/">Starboard</a>.</p>
+
+<p>You can also use <code class="language-plaintext highlighter-rouge">vega-lite</code> directly with the online editor at:</p>
+
+<p>https://vega.github.io/editor/</p>
+
+<hr />
+
+<h2 id="vega-lite-in-context---web-viz">vega-lite in context - Web Viz</h2>
+
+<ul>
+  <li>Tools and frameworks covered
+    <ul>
+      <li>ipywidgets</li>
+      <li>bqplot</li>
+    </ul>
+  </li>
+  <li>Intro to Web Viz
+    <ul>
+      <li>(Sort of) How the web works</li>
+      <li>(Very, very) Basic javascript</li>
+      <li>vega-lite</li>
+    </ul>
+  </li>
+</ul>
+
+<p>notes:
+First we’ll review a bit about what we’ve already done using bqplot</p>
+
+<p>Then we’ll have a <em>very</em> hand-wavy intro to how javascript/web dev works</p>
+
+<hr />
+
+<h2 id="status-update-whats-left">Status Update: What’s Left</h2>
+
+<p>Today, we are introducing the <em>second to last</em> major tool we will use: <a href="https://vega.github.io/vega-lite/">vega-lite</a>.</p>
+
+<p>After this: <a href="https://jekyllrb.com/">Jekyll</a> + <a href="https://altair-viz.github.io/index.html">Altair</a> &amp; Javascript dev within</p>
+
+<hr />
+
+<h2 id="bqplot-review">bqplot review</h2>
+
+<p>Declarative:</p>
+
+<ul>
+  <li>Construct <code class="language-plaintext highlighter-rouge">Figure</code> objects from <code class="language-plaintext highlighter-rouge">Mark</code> objects.</li>
+  <li>Relate points to each other with <code class="language-plaintext highlighter-rouge">Scale</code> objects, display them using <code class="language-plaintext highlighter-rouge">Mark</code> objects that are keyed to a set of <code class="language-plaintext highlighter-rouge">Scale</code> objects, and</li>
+  <li>Apply interaction using <code class="language-plaintext highlighter-rouge">ipywidgets</code> and <code class="language-plaintext highlighter-rouge">traitlets</code>.</li>
+</ul>
+
+<hr />
+
+<h2 id="bqplot-objects">bqplot objects</h2>
+
+<ul>
+  <li>A mark is some mechanism for displaying data.  For example, we might have
+data that has a set of x and y values, which we can use <code class="language-plaintext highlighter-rouge">Lines</code> to
+represent.</li>
+  <li><code class="language-plaintext highlighter-rouge">Scale</code> objects describe relationships between visual attributes (position)
+and data values.</li>
+  <li><code class="language-plaintext highlighter-rouge">Axis</code> objects are where data are placed.</li>
+  <li><code class="language-plaintext highlighter-rouge">Figure</code> objects contain marks and axes, as well as interaction.</li>
+</ul>
+
+<p>notes:
+a quick reminder about our grammar of graphics objects</p>
+
+<hr />
+
+<h2 id="bqplot-very-simple">bqplot: Very Simple</h2>
+
+<p>Here is a reminder about that sort of basic setup:</p>
+
+<pre><code class="language-#python">import bqplot
+import numpy as np
+
+x = np.arange(100)
+y = np.random.random(100) + 5
+
+x_sc = bqplot.LinearScale()
+y_sc = bqplot.LinearScale()
+lines = bqplot.Lines(x = x, y = y, scales = {'x': x_sc, 'y': y_sc})
+ax_x = bqplot.Axis(scale = x_sc, label = 'X value')
+ax_y = bqplot.Axis(scale = y_sc, label = 'Y value', orientation = 'vertical')
+fig = bqplot.Figure(marks = [lines], axes = [ax_x, ax_y])
+display(fig)
+</code></pre>
+
+<hr />
+
+<h2 id="more-bqplot">More bqplot</h2>
+
+<p>With bqplot, we construct a set of objects that are related:</p>
+
+<ul>
+  <li>Scales</li>
+  <li>Axes</li>
+  <li>Marks</li>
+  <li>Figures</li>
+  <li>Interactions</li>
+</ul>
+
+<hr />
+
+<h2 id="scales">Scales</h2>
+
+<p><code class="language-plaintext highlighter-rouge">bqplot</code> provides several scales we can utilize:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">LogScale</code></li>
+  <li><code class="language-plaintext highlighter-rouge">LinearScale</code></li>
+  <li><code class="language-plaintext highlighter-rouge">DateScale</code></li>
+  <li><code class="language-plaintext highlighter-rouge">OrdinalScale</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ColorScale</code></li>
+  <li>A few more as well.</li>
+</ul>
+
+<p>(<a href="https://bqplot.readthedocs.io/en/latest/_generate/bqplot.scales.Scale.html">documentation</a>)</p>
+
+<hr />
+
+<h2 id="marks">Marks</h2>
+
+<p>bqplot has several different marks we can explore.  We have utilized a few:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">HeatMap</code></li>
+  <li><code class="language-plaintext highlighter-rouge">GridHeatMap</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Bars</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Graph</code></li>
+</ul>
+
+<p>(<a href="https://bqplot.readthedocs.io/en/latest/_generate/bqplot.marks.Mark.html">documentation</a>)</p>
+
+<hr />
+
+<h2 id="bqplot-interaction">bqplot interaction</h2>
+
+<p>As noted in the previous class, bqplot widgets are all based on ipywidgets.  This
+means we use the same systems for describing the two.</p>
+
+<p>We add an interaction to a given figure via the <code class="language-plaintext highlighter-rouge">interaction</code> keyword argument
+to a figure.</p>
+
+<hr />
+
+<h2 id="bqplot-interactors">bqplot interactors</h2>
+
+<p>We have used several of these different interaction methods:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">FastIntervalSelector</code></li>
+  <li><code class="language-plaintext highlighter-rouge">IndexSelector</code></li>
+  <li><code class="language-plaintext highlighter-rouge">BrushIntervalSelector</code> &amp; <code class="language-plaintext highlighter-rouge">BrushSelector</code></li>
+  <li><code class="language-plaintext highlighter-rouge">MultiSelector</code></li>
+  <li><code class="language-plaintext highlighter-rouge">LassoSelector</code></li>
+  <li><code class="language-plaintext highlighter-rouge">HandDraw</code></li>
+  <li><code class="language-plaintext highlighter-rouge">PanZoom</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Tooltip</code></li>
+</ul>
+
+<hr />
+
+<h2 id="the-web-a-very-hand-wavy-overview">The Web: A <em>very</em> hand-wavy overview</h2>
+
+<ul>
+  <li>Content is transmitted from point-to-point (PPP)</li>
+  <li>Content can be manipulated locally or remotely</li>
+  <li>Not all servers can manipulate data before sending</li>
+</ul>
+
+<p>notes:
+this will be an EXTREMELY hand wavy overview</p>
+
+<p>PPP just is a fancy way of saying a communcations protocol that supports transmision between two routers w/ or w/o any host - https://en.wikipedia.org/wiki/Point-to-Point_Protocol</p>
+
+<hr />
+
+<h2 id="your-browser">Your Browser</h2>
+
+<ul>
+  <li>Your browser contains – essentially – an entire operating system.  It can
+manage:
+    <ul>
+      <li>Display mechanisms</li>
+      <li>Interaction with you, the user</li>
+      <li>Input/output from files and file-like objects</li>
+      <li>Interpreter to execute code</li>
+    </ul>
+  </li>
+  <li>Most of its activities are mediated via a <a href="https://www.w3schools.com/js/js_htmldom.asp">document object model (DOM)</a> and
+the programming language Javascript</li>
+</ul>
+
+<hr />
+
+<h2 id="things-to-note">Things to Note</h2>
+
+<ul>
+  <li>Javascript is “garbage collected”</li>
+  <li>Javascript is <a href="https://dev.to/steelvoltage/if-javascript-is-single-threaded-how-is-it-asynchronous-56gd">single-threaded</a></li>
+  <li>Asynchronous programming can be a real noodle-bender (good news is we already handled this with <code class="language-plaintext highlighter-rouge">bqplot</code> callbacks!)</li>
+</ul>
+
+<p>notes:
+here “garbage collected” just means JS handles memory management - we don’t have to explicitly allocate and deallocate regions in memory for variables</p>
+
+<p>the “garbage collector” is basically the part of JS that goes and figures out what memory to release</p>
+
+<p>“single-threaded” means that code executes in order, except …</p>
+
+<p>“asynchronous” means that <em>some</em> code gets handed off some code to the browser to be excecuted “in the background” - when the browser is finished, the tasks are “returned” – we essentially already did thsi with some of our “on_change” and “on_click” stuff with bqplot!</p>
+
+<hr />
+
+<h2 id="document-object-model">Document Object Model</h2>
+
+<p>The Document Object Model (DOM) is how we interact with the collection of HTML
+objects in our document.</p>
+
+<p>For instance, a page can be composed of <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> objects, <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> objects, etc,
+and we can construct and interact with these.  This includes things like
+modifying style sheets.</p>
+
+<p><img src="https://www.w3schools.com/js/pic_htmltree.gif" alt="" /></p>
+
+<p>(See, for example, the
+<a href="https://jsfiddle.net/">jsfiddle</a> for <a href="https://jsfiddle.net/boilerplate/jquery">jQuery
+boilerplate</a> ).</p>
+
+<p>notes:</p>
+
+<p>for example, we can specify the layout of a document in HTML with different components like the header, title, and body</p>
+
+<p>the body will have different elements like <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code>, etc.</p>
+
+<hr />
+
+<h2 id="document-object-model-1">Document Object Model</h2>
+
+<p>The Document Object Model (DOM) is how we interact with the collection of HTML
+objects in our document.</p>
+
+<p>For instance, a page can be composed of <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> objects, <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> objects, etc,
+and we can construct and interact with these.  This includes things like
+modifying style sheets.</p>
+
+<p><img src="https://www.w3schools.com/js/pic_htmltree.gif" alt="" /></p>
+
+<p>One alternative is to have rendering tied to data and data
+values, and to have those automatically update as needed – <code class="language-plaintext highlighter-rouge">vega-lite</code>.</p>
+
+<hr />
+
+<h2 id="synchronous-programming">Synchronous programming</h2>
+
+<p>In Python, we would fetch a website and wait for that to finish before we move
+on.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import requests
+
+r = requests.get("https://google.com/")
+print(r.text)
+print("Request completed!")
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="asynchronous-programming">Asynchronous programming</h2>
+
+<p>In Javascript, we would tell the code to fetch, but we would also tell it what
+to do <em>after</em> it finished.</p>
+
+<p>This uses jQuery, but you can <a href="http://youmightnotneedjquery.com/#json">do it without
+that</a>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$.get("https://google.com/", function(data, status){
+      alert("Data: " + data + "\nStatus: " + status);
+});
+console.log("Hey, I've done the thing.");
+</code></pre></div></div>
+
+<p>Note that you can’t always get this to work. In fact, that example won’t even
+work!</p>
+
+<hr />
+
+<h2 id="async-and-event-driven">Async and Event-Driven</h2>
+
+<p>Async is how we can think about event driven programming, as well.  We have
+done this using <code class="language-plaintext highlighter-rouge">traitlets</code> and <code class="language-plaintext highlighter-rouge">ipywidgets</code> using callbacks in Python, and we will do it here
+as well.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var button = $("button");
+
+button.on("click", function() {
+    console.log("I've been clicked!");
+});
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="basic-javascript">Basic Javascript</h2>
+
+<p>We will go over a few things, and then move on to vega-lite.</p>
+
+<p>You can declare variables in Javascript implicitly or explicitly, depending on how you want them scoped.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var myArray = [1, 2, 3, 4];
+var myString = "Hello there!";
+var myConcatString = "Hi " + "there " + 5;
+var myObject = {'a': 1, 'b': 2, 'c': [1, 2, 3, 4]};
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="updating-variables">Updating variables</h2>
+
+<p>If you have an array of objects, there are three very handy functions you can
+utilize: <code class="language-plaintext highlighter-rouge">slice</code>, <code class="language-plaintext highlighter-rouge">forEach</code> and <code class="language-plaintext highlighter-rouge">filter</code>.  If you have an object, you can
+update it either by accessing a property with a period (<code class="language-plaintext highlighter-rouge">obj.something</code>) or by
+accessing it like you would a dictionary in python (<code class="language-plaintext highlighter-rouge">obj['something']</code>).</p>
+
+<p>We will use this more next week, but here is the overview…</p>
+
+<hr />
+
+<h2 id="next-week">Next week</h2>
+
+<h3 id="arrays-filter">Arrays: <code class="language-plaintext highlighter-rouge">filter</code></h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var myArray = [1, 5, 1, 3, 50, 14, 2];
+myArrayFiltered = myArray.filter(val =&gt; val &gt; 2);
+</code></pre></div></div>
+
+<p>Note that here I’m using <code class="language-plaintext highlighter-rouge">=&gt;</code> as shorthand for declaring a function.</p>
+
+<p>notes:
+we will use the filtering especially for data and plots next week!</p>
+
+<hr />
+
+<h2 id="next-week-1">Next week</h2>
+
+<h3 id="arrays-foreach">Arrays: <code class="language-plaintext highlighter-rouge">forEach</code></h3>
+
+<p>To execute something on every value in an array, you can call <code class="language-plaintext highlighter-rouge">forEach</code> with a
+function.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var myArray = [1, 2, 3, 4, 5];
+myArray.forEach(val =&gt; console.log(val * 2));
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="next-week-2">Next week</h2>
+
+<h3 id="arrays-slice">Arrays: <code class="language-plaintext highlighter-rouge">slice</code></h3>
+
+<p>You can set a start and a stop on an array with a <code class="language-plaintext highlighter-rouge">slice</code> call:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var myArray = ["Hello", "I", "am", "here", "now"];
+myArray.slice(3).forEach(word =&gt; console.log(word));
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="vega-lite-editor">vega-lite editor</h2>
+
+<p>https://vega.github.io/editor/</p>
+
+<p>notes:
+we’ll start by making a quick plot in the vega-lite editor</p>
+
+<p><strong>open the vega-editor and spend some time with examples!!!</strong></p>
+
+<hr />
+
+<h2 id="vega-lite-syntax-basics">vega-lite syntax: basics</h2>
+
+<p>From the vega-lite examples, you can make a bar chart that is an aggregate like so:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "data": {"url": "data/movies.json"},
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "bin": true,
+      "field": "IMDB_Rating",
+      "type": "quantitative"
+    },
+    "y": {
+      "aggregate": "count",
+      "type": "quantitative"
+    }
+  }
+}
+</code></pre></div></div>
+
+<p>Data available <a href="https://github.com/vega/vega-datasets/tree/master/data">list is here</a>.</p>
+
+<p>notes:
+here, we just specify what version of vega-lite we are using</p>
+
+<p>then specify where the data is (this is stored on the vega-lite github of this schema)</p>
+
+<p>then say we are making a “mark” of a “barplot”</p>
+
+<p>then say what we are</p>
+
+<hr />
+
+<h2 id="vega-lite-syntax">vega-lite syntax</h2>
+
+<p>There are several mechanisms by which we describe data representations in
+<code class="language-plaintext highlighter-rouge">vega-lite</code>, but the overarching principle is that it is <em>declarative</em>.  We define
+what it does based on what we say we want it to look like.</p>
+
+<p>The place where this is no longer true is when we modify <code class="language-plaintext highlighter-rouge">datum</code> values.</p>
+
+<hr />
+
+<h2 id="vega-lite-syntax-1">vega-lite syntax</h2>
+
+<p>The syntax you will need to be the most familiar with:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">mark</code>: how to visually represent something</li>
+  <li><a href="https://vega.github.io/vega-lite/docs/encoding.html"><code class="language-plaintext highlighter-rouge">encoding</code></a>: the translation between data and the mark</li>
+  <li><code class="language-plaintext highlighter-rouge">aggregate</code>: operating over a collection of points – <code class="language-plaintext highlighter-rouge">mean</code>, <code class="language-plaintext highlighter-rouge">sum</code>, <code class="language-plaintext highlighter-rouge">median</code>,
+<code class="language-plaintext highlighter-rouge">min</code>, <code class="language-plaintext highlighter-rouge">max</code>, <code class="language-plaintext highlighter-rouge">count</code> (next week)</li>
+  <li><code class="language-plaintext highlighter-rouge">filtering</code>: for plotting subsets of data (next week)</li>
+  <li><code class="language-plaintext highlighter-rouge">type</code>: <code class="language-plaintext highlighter-rouge">quantitative</code>, <code class="language-plaintext highlighter-rouge">temporal</code>, <code class="language-plaintext highlighter-rouge">ordinal</code>, or <code class="language-plaintext highlighter-rouge">nominal</code></li>
+</ul>
+
+<hr />
+
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="topic-3-starboard">TOPIC 3: Starboard</h1>
+
+<hr />
+
+<h2 id="starboard">Starboard</h2>
+
+<p><a href="https://starboard.gg/">A quick intro to Starboard</a></p>
+
+<p>notes:
+<strong>DO</strong></p>
+<ul>
+  <li>starboard.gg – the intro notebook</li>
+  <li>also at starboard.gg - the Data Viz in JS and Pandas &amp; Matplotlib intro notebooks – say we will go over this together, but if you want a quick peak</li>
+  <li>note that now the inclass and prep notebooks will be online versions hosted by starboard!</li>
+</ul>
+
+<p><strong>come back here for more after!!</strong></p>
+
+<hr />
+
+<h2 id="starboard-tips--tricks"><a href="https://starboard.gg/">Starboard</a> Tips &amp; Tricks</h2>
+
+<p><img src="images/addcell.png" /></p>
+
+<p>notes:
+Starboard is a newer system and so there are some things that are a bit fiddly and we should be aware of.</p>
+
+<p>One is that the “add cell” button is on the right and is a little hard to see.</p>
+
+<p>Also, to add text, you have to click on the little button on the left to modify text or code blocks.</p>
+
+<hr />
+
+<h2 id="starboard-tips--tricks-1"><a href="https://starboard.gg/">Starboard</a> Tips &amp; Tricks</h2>
+
+<p><img src="images/celltype.png" /></p>
+
+<p>notes:
+You can the type of the cell into things like markdown/JS/Python, etc on the left dropdown as well</p>
+
+<hr />
+
+<h2 id="starboard-tips--tricks-2"><a href="https://starboard.gg/">Starboard</a> Tips &amp; Tricks</h2>
+
+<p><img src="images/dontforgettosave.png" /></p>
+
+<p>Autosave is <strong>NOT</strong> a feature of Starboard notebooks!</p>
+
+<p>notes:
+one, potentially super annoying thing is that Starboard does not auto-save your work – make sure you click that save button frequently!!</p>
+

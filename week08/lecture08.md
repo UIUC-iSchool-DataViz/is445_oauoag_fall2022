@@ -3,7 +3,19 @@ title: Lecture 8 - Choosing viz & Online viz platforms
 layout: lecture
 description: >-
  Choosing what viz type to use, and an introduction to Vega/Vega-lite and Starboard 
-date: 2022-03-21
+date: 2022-10-11
+---
+
+# Final materials/recordings up
+
+notes:
+also, the optional readings in the syllabus have been updated to reflect topics covered in weeks 11-13-ish
+
+recordings aren't 100% correct times, things are split over a few weeks
+
+also, final project is posted -- eventually you will sign up for groups again (for that and Homework 10) but we'll get to that when we get closer to it!
+
+
 ---
 
 ## Last Week
@@ -146,6 +158,8 @@ to compare values from multiple sources, you could use collected columns
 notes:
 Or to show they're part of a whole, use a stacked column chart
 
+I personally find these a bit hard to decifer, but other viz folks like them a lot -- might be a personal choice type thing.
+
 ---
 
 ## Comparison
@@ -154,6 +168,8 @@ Or to show they're part of a whole, use a stacked column chart
 
 notes:
 or to show a time-series, use connected lines that stack on top of each other to show area across the whole canvass. This shows you trends and specific vertical values.
+
+same issues with this here as far as stacking, but again, people like it!
 
 ---
 
@@ -254,7 +270,7 @@ Then we'll have a *very* hand-wavy intro to how javascript/web dev works
 
 Today, we are introducing the *second to last* major tool we will use: [vega-lite](https://vega.github.io/vega-lite/).
 
-After this: [Idyll](https://idyll-lang.org/) and some [React](https://reactjs.org/)/[D3](https://d3js.org/) Javascript dev within
+After this: [Jekyll](https://jekyllrb.com/) + [Altair](https://altair-viz.github.io/index.html) & Javascript dev within
 
 ---
 
@@ -579,6 +595,8 @@ https://vega.github.io/editor/
 notes:
 we'll start by making a quick plot in the vega-lite editor
 
+**open the vega-editor and spend some time with examples!!!**
+
 ---
 
 ## vega-lite syntax: basics
@@ -652,10 +670,49 @@ The syntax you will need to be the most familiar with:
 
 [A quick intro to Starboard](https://starboard.gg/)
 
-To the internet!
 
 notes:
 **DO**
  * starboard.gg -- the intro notebook
  * also at starboard.gg - the Data Viz in JS and Pandas & Matplotlib intro notebooks -- say we will go over this together, but if you want a quick peak
  * note that now the inclass and prep notebooks will be online versions hosted by starboard!
+ 
+**come back here for more after!!**
+
+---
+
+## [Starboard](https://starboard.gg/) Tips & Tricks
+
+<img src="images/addcell.png">
+
+
+notes:
+Starboard is a newer system and so there are some things that are a bit fiddly and we should be aware of.
+
+One is that the "add cell" button is on the right and is a little hard to see.
+
+Also, to add text, you have to click on the little button on the left to modify text or code blocks.
+
+---
+
+## [Starboard](https://starboard.gg/) Tips & Tricks
+
+<img src="images/celltype.png">
+
+
+notes:
+You can the type of the cell into things like markdown/JS/Python, etc on the left dropdown as well
+
+---
+
+## [Starboard](https://starboard.gg/) Tips & Tricks
+
+<img src="images/dontforgettosave.png">
+
+Autosave is **NOT** a feature of Starboard notebooks!
+
+
+notes:
+one, potentially super annoying thing is that Starboard does not auto-save your work -- make sure you click that save button frequently!!
+
+
