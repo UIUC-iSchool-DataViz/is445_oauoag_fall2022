@@ -3,19 +3,7 @@ title: Lecture 8 - Choosing viz & Online viz platforms
 layout: lecture
 description: >-
  Choosing what viz type to use, and an introduction to Vega/Vega-lite and Starboard 
-date: 2022-10-11
----
-
-# Final materials/recordings up
-
-notes:
-also, the optional readings in the syllabus have been updated to reflect topics covered in weeks 11-13-ish
-
-recordings aren't 100% correct times, things are split over a few weeks
-
-also, final project is posted -- eventually you will sign up for groups again (for that and Homework 10) but we'll get to that when we get closer to it!
-
-
+date: 2022-10-13
 ---
 
 ## Last Week
@@ -246,6 +234,9 @@ We will be exploring this using [Starboard](https://starboard.gg/).
 You can also use `vega-lite` directly with the online editor at:
 
 https://vega.github.io/editor/
+
+notes:
+**don't go to editor yet!!!**
 
 ---
 
