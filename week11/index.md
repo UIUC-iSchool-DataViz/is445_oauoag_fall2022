@@ -4,11 +4,6 @@ visible: true
 icon: undraw_good_doggy_4wfq.svg
 notitle: true
 examples:
-  - filename: jekyll tour notes.pdf
-    type: iodide
-    title: Jekyll Tour Notes
-    description: Prep Starboard Notebook
-    link: https://github.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/blob/main/week11/pdfs/jekyll%20tour%20notes.pdf
   - filename: In Class Jekyll Files
     type: iodide
     title: In class Jekyll materials, Week 11
@@ -49,5 +44,5 @@ Full corgi dataset available [here](corg/corgiData_countries_full_2020.json).
 
  1. <a href="https://jekyllrb.com/tutorials/home/">Jekyll Tutorials (hit "Next" to see them at bottom)</a> 
  1. <a href="https://altair-viz.github.io/gallery/index.html">Altair docs</a> - in particular <a href="https://altair-viz.github.io/user_guide/encoding.html#encoding-data-types">Encoding Data Types</a>, <a href="https://altair-viz.github.io/user_guide/internals.html#converting-vega-lite-to-altair">Vegalite-Altair conversions</a>, <a href="https://altair-viz.github.io/user_guide/transform/bin.html#bin-transforms">Binning</a>, <a href="https://altair-viz.github.io/user_guide/transform/filter.html">Filter transforms</a> and <a href="https://altair-viz.github.io/gallery/interactive_cross_highlight.html#interactive-chart-with-cross-highlight">interactive examples</a>
-
+ 
  
