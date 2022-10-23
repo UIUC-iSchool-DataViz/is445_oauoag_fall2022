@@ -1,0 +1,612 @@
+<h2 id="this-weeklast-week">This Week/Last Week</h2>
+
+<p><img src="images/week10.png" /></p>
+
+<p>notes:</p>
+
+<p>we’ll start today with finishing up some stuff we’ve done in Starboard and then,</p>
+
+<p>today we’ll be continuing on with some of what we did last week – moving into more Markdown-based viz and viz “reports” along with more javascript and
+finally getting into jekyll probably at the end of class</p>
+
+<hr />
+
+<h2 id="dropping-lowest-weekly-viz-score">Dropping lowest Weekly Viz score</h2>
+
+<hr />
+
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="back-to-starboard">Back to Starboard!!</h1>
+
+<p>notes:
+we’ll finish up some stuff in starboard, namly adding interactivity, before moving onto Idyll</p>
+
+<p><strong>go to starboard to finish up!!</strong></p>
+
+<hr />
+
+<h2 id="going-further-with-starboard">Going further with Starboard</h2>
+
+<p>There are also ways to embed Starboard notebooks in webpages.</p>
+
+<p>Check out a few tutorials for more:</p>
+<ul>
+  <li>https://kjohnsen.org/post/embed-starboard/</li>
+  <li>https://github.com/gzuidhof/starboard-wrap</li>
+</ul>
+
+<hr />
+
+<h2 id="today">Today</h2>
+
+<ul>
+  <li>Publishing
+    <ul>
+      <li>Jekyll</li>
+      <li>Github Pages</li>
+      <li>vega-lite in Python with Altair</li>
+    </ul>
+  </li>
+</ul>
+
+<p>notes:
+<strong>back from starboard</strong></p>
+
+<hr />
+
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="topic-1-web-developing-with-jekyll-and-ruby-yaml-liquid">TOPIC 1: Web developing with Jekyll (and Ruby, YAML, Liquid)</h1>
+
+<p>Many of these <a href="https://uiuc-ischool-dataviz.github.io/is445_spring2022/week14/Jekyll_diptendra.pdf">slides</a> are credited to <a href="https://www.linkedin.com/in/diptendra-bagchi">Diptendra Bagchi</a>, a former TA for this course.</p>
+
+<p>notes:
+we’ll go through a few different concepts and languages including Jekyll, YAML files, Liquid and Ruby</p>
+
+<p>in practice, we won’t really have to use <strong>any</strong> of these and we’ll mostly be using things we already know like Markdown, Python, and vega-lite, but it is here as a reference in case you want to make a jekyll page with interactive visualizations in the future that is in a different format to the template that we will be using for this class</p>
+
+<hr />
+
+<h2 id="jekyll">Jekyll</h2>
+
+<div class="left">
+
+Jekyll is a [static site generator](https://www.cloudflare.com/learning/performance/static-site-generator/)
+
+ 
+</div>
+<div class="right">
+<img src="images/jekyll_landing.png" />
+</div>
+
+<p>notes:</p>
+<ul>
+  <li>static site generator means cite is generated in HTML from data + templetes – instead of writing the format for each of our class pages, there is a format that is used to make certain files into slides, prep notebook links, etc</li>
+</ul>
+
+<hr />
+
+<h2 id="jekyll-1">Jekyll</h2>
+
+<div class="left">
+
+Jekyll is a [static site generator](https://www.cloudflare.com/learning/performance/static-site-generator/)
+
+ * Reduce manual coding for webpages with repeated content [see static site source code for class webpage](https://github.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022)
+ 
+</div>
+<div class="right">
+<img src="images/jekyll_landing.png" />
+</div>
+
+<p>notes:</p>
+<ul>
+  <li>it can reduce manual coding for repeated “kinds” of pages, like for example the setup of our week’s pages</li>
+</ul>
+
+<p><strong>go to our webpage and our github!</strong></p>
+
+<hr />
+
+<h2 id="jekyll-2">Jekyll</h2>
+
+<div class="left">
+
+Jekyll is a [static site generator](https://www.cloudflare.com/learning/performance/static-site-generator/)
+
+ * Reduce manual coding for webpages with repeated content [see static site source code for class webpage](https://github.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022)
+ * Written in Ruby
+ 
+</div>
+<div class="right">
+<img src="images/jekyll_landing.png" />
+</div>
+
+<p>notes:</p>
+<ul>
+  <li>it’s written in the Ruby programming language, but we won’t really be making much use of this ourselves and instead will use Markdown to write most of our pages</li>
+</ul>
+
+<hr />
+
+<h2 id="jekyll-3">Jekyll</h2>
+
+<div class="left">
+
+Jekyll is a [static site generator](https://www.cloudflare.com/learning/performance/static-site-generator/)
+
+ * Reduce manual coding for webpages with repeated content [see static site source code for class webpage](https://github.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022)
+ * Written in Ruby
+ * Very popular static site generator (most popular as of 2017)
+
+ 
+</div>
+<div class="right">
+<img src="images/jekyll_landing.png" />
+</div>
+
+<p>notes:</p>
+<ul>
+  <li>its useful to know how to use, as it is very popular (I think the most popular?) static site generator</li>
+</ul>
+
+<hr />
+
+<h2 id="jekyll-4">Jekyll</h2>
+
+<div class="left">
+
+Jekyll is a [static site generator](https://www.cloudflare.com/learning/performance/static-site-generator/)
+
+ * Reduce manual coding for webpages with repeated content [see static site source code for class webpage](https://github.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022)
+ * Written in Ruby
+ * Very popular static site generator (most popular as of 2017)
+ * easy(ish) to deploy on github.io and other hosting platforms
+
+ 
+</div>
+<div class="right">
+<img src="images/jekyll_landing.png" />
+</div>
+
+<p>notes:</p>
+<ul>
+  <li>additionally, it is fairly easy to deploy as a github page (we’ll do a bit of this, it does require understanding a bit about how github works and how to push changes)</li>
+</ul>
+
+<hr />
+
+<h2 id="jekyll-5">Jekyll</h2>
+
+<div class="left">
+
+Jekyll is a [static site generator](https://www.cloudflare.com/learning/performance/static-site-generator/)
+
+ * Reduce manual coding for webpages with repeated content [see static site source code for class webpage](https://github.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022)
+ * Written in Ruby
+ * Very popular static site generator (most popular as of 2017)
+ * easy(ish) to deploy on github.io and other hosting platforms
+ * can be integrated with vega-lite (requires the [class online resume/cv template](https://github.com/jnaiman/online_cv_public) but can be generalized)
+ 
+</div>
+<div class="right">
+<img src="images/jekyll_landing.png" />
+</div>
+
+<p>notes:</p>
+<ul>
+  <li>and finally, it is something we can integrate with vega-lite to make interactive plots!</li>
+</ul>
+
+<hr />
+
+<h2 id="jekyll-installation">Jekyll installation</h2>
+
+<p>We did this in Homework #7 <a href="https://uiuc-ischool-dataviz.github.io/is445_bcubcg_fall2022/week09/installation_instructions_week11.html">recall instructions here</a>.</p>
+
+<p>notes:
+the good news is that if we recall homework #7 we already installed jekyll!  now we’ll actually start making modifcations to your webpages in order to host your own content (and final projects) and publishing to github</p>
+
+<hr />
+
+<h2 id="jekyll-syntax--files">Jekyll syntax &amp; files</h2>
+
+<div class="left">
+
+ * Main configuration's are done with [YAML](https://yaml.org/) files/syntax
+ 
+</div>
+
+<div class="right">
+
+<img src="images/yaml.png" />
+
+</div>
+
+<p>notes:</p>
+
+<p>all of the ways to configure our pages are done with a yaml syntax</p>
+
+<p>yaml is sort of like a cousin of markdown, and is used to use pre-determined formatting for specific elements and keep us from having to re-code things</p>
+
+<hr />
+
+<h2 id="jekyll-syntax--files-1">Jekyll syntax &amp; files</h2>
+
+<div class="left">
+
+ * Main configuration's are done with [YAML](https://yaml.org/) files/syntax
+ 
+<img src="images/snapshot_of_onlinecv.png" />
+ 
+</div>
+
+<div class="right">
+
+<img src="images/yaml.png" />
+
+</div>
+
+<p>notes:</p>
+
+<p>for example if you look in the online-cv template that we are using for class, you’ll see a _config.yml file…</p>
+
+<hr />
+
+<h2 id="jekyll-syntax--files-2">Jekyll syntax &amp; files</h2>
+
+<div class="left">
+
+ * Main configuration's are done with [YAML](https://yaml.org/) files/syntax
+ 
+<img src="images/snapshot_of_onlinecv.png" />
+
+<img src="images/config2.png" />
+ 
+</div>
+
+<div class="right">
+
+<img src="images/yaml.png" />
+
+</div>
+
+<p>notes:
+… you’ll see a bunch of parameters that you can set that will “auto configure” your site (like its title, its baseURL, etc)</p>
+
+<hr />
+
+<h2 id="jekyll-syntax--files-3">Jekyll syntax &amp; files</h2>
+
+<div class="left">
+
+ * Main configuration's are done with [YAML](https://yaml.org/) files/syntax
+ * can also be included at the top of specific pages
+ 
+</div>
+
+<div class="right">
+
+<img src="images/blogpost_yaml.png" />
+
+(see `_posts/` directory, example blog post)
+
+</div>
+
+<p>notes:
+there will also often be a bits of yaml formatted text at the top of individual pages</p>
+
+<p>for example, if you open the example blog post in a text editor at the top you’ll see little snippets of yaml inbetween three dashes – this is the configurations for EACH blog post that will change with the blog post.</p>
+
+<p>From the example here we can see that each post has a title, subject tags, a style and color, and a description</p>
+
+<hr />
+
+<h2 id="liquid-for-use-in-jekyll">Liquid (for use in Jekyll)</h2>
+
+<div class="left">
+
+[Liquid](https://shopify.github.io/liquid/) used to load [dynamic content](https://www.omniconvert.com/what-is/dynamic-content/) on webpages 
+
+</div>
+
+<div class="right">
+
+<img src="images/liquid_examples.png" />
+
+</div>
+
+<p>notes:
+dynamic content just means content that changes based on behavior of the user</p>
+
+<hr />
+
+<h2 id="liquid-for-use-in-jekyll-1">Liquid (for use in Jekyll)</h2>
+
+<div class="left">
+
+[Liquid](https://shopify.github.io/liquid/) used to load [dynamic content](https://www.omniconvert.com/what-is/dynamic-content/) on webpages 
+
+ * Also written in Ruby
+ * objects like `Lecture 10 - Starboard, Publishing &amp; more in Jekyll` are used to print content
+
+</div>
+
+<div class="right">
+
+<img src="images/liquid_examples.png" />
+
+</div>
+
+<p>notes:
+content is then stored in variables, which can be use to print the tags of the variable on your page</p>
+
+<hr />
+
+<h2 id="liquid-for-use-in-jekyll-2">Liquid (for use in Jekyll)</h2>
+
+<div class="left">
+
+[Liquid](https://shopify.github.io/liquid/) used to load [dynamic content](https://www.omniconvert.com/what-is/dynamic-content/) on webpages 
+
+ * Also written in Ruby
+ * objects like `Lecture 10 - Starboard, Publishing &amp; more in Jekyll` are used to print content
+ * and to create logic with their tags like `if page.show_sidebar`
+
+</div>
+
+<div class="right">
+
+<img src="images/liquid_examples.png" />
+
+</div>
+
+<p>notes:
+you can also use logic to do flow control based on the values of the object tag variables</p>
+
+<hr />
+
+<h2 id="liquid-for-use-in-jekyll-3">Liquid (for use in Jekyll)</h2>
+
+<div class="left">
+
+[Liquid](https://shopify.github.io/liquid/) used to load [dynamic content](https://www.omniconvert.com/what-is/dynamic-content/) on webpages 
+
+ * Also written in Ruby
+ * objects like `Lecture 10 - Starboard, Publishing &amp; more in Jekyll` are used to print content
+ * and to create logic with their tags like `if page.show_sidebar`
+ * also "built in" filters to control how tags/content is viewed
+
+</div>
+
+<div class="right">
+
+<img src="images/liquid_examples.png" alt="source: Diptendra Bagchi" />
+
+</div>
+
+<p>notes:
+there are also some “built in” filters which can help control how content looks, for example shown is that a string variable would be capitalized</p>
+
+<hr />
+
+<h2 id="liquid-for-use-in-jekyll-4">Liquid (for use in Jekyll)</h2>
+
+<div class="left">
+
+[Liquid](https://shopify.github.io/liquid/) used to load [dynamic content](https://www.omniconvert.com/what-is/dynamic-content/) on webpages 
+
+ * Also written in Ruby
+ * objects like `Lecture 10 - Starboard, Publishing &amp; more in Jekyll` are used to print content
+ * and to create logic with their tags like `if page.show_sidebar`
+ * also "built in" filters to control how tags/content is viewed
+ * used to build into "layouts" for repeated pages (like blog posts, or weekly content!)
+
+</div>
+
+<div class="right">
+
+<img src="images/layouts.png" alt="source: Diptendra Bagchi" />
+
+</div>
+
+<p>notes:
+there are also some “built in” filters which can help control how content looks, for example shown is that a string variable would be capitalized</p>
+
+<hr />
+
+<h2 id="liquid-for-use-in-jekyll-5">Liquid (for use in Jekyll)</h2>
+
+<div class="left">
+
+[Liquid](https://shopify.github.io/liquid/) used to load [dynamic content](https://www.omniconvert.com/what-is/dynamic-content/) on webpages 
+
+ * Also written in Ruby
+ * objects like `Lecture 10 - Starboard, Publishing &amp; more in Jekyll` are used to print content
+ * and to create logic with their tags like `if page.show_sidebar`
+ * also "built in" filters to control how tags/content is viewed
+ * used to build into "layouts" for repeated pages (like blog posts, or weekly content!)
+
+</div>
+
+<div class="right">
+
+<img src="images/layouts.png" alt="source: Diptendra Bagchi" />
+
+</div>
+
+<div>&nbsp;</div>
+<p>We can ignore all of this if we use a template that supports what we want to do!</p>
+
+<p>notes:
+the nice thing is that, for the most part, we don’t have to worry about any of this!</p>
+
+<p>we’ll be using a templete for our work with Jekyll for this class, so you won’t have to deal with most of this – we’ll be using mostly markdown an just a bit of HTML with our Python and vega-lite skills!</p>
+
+<hr />
+
+<h2 id="markdown-in-jekyll">Markdown in Jekyll</h2>
+
+<p>Our Jekyll template uses Markdown for text, just like Starboard:</p>
+
+<ul>
+  <li>To <strong>bold</strong>, use <code class="language-plaintext highlighter-rouge">**two asterisks**</code></li>
+  <li>You can <em>italicize</em> with <code class="language-plaintext highlighter-rouge">_underscores_</code></li>
+  <li>Try out making bullet lists with <code class="language-plaintext highlighter-rouge">*</code> on each line</li>
+  <li>Links are fun: <code class="language-plaintext highlighter-rouge">[link text](http://example.com/)</code></li>
+</ul>
+
+<hr />
+
+<h2 id="jekyll-templates">Jekyll Templates</h2>
+
+<p>A non-exhaustive list can be found <a href="https://github.com/topics/jekyll-theme">by searching on GitHub</a> or other sites.</p>
+
+<p>We’ll be <a href="https://github.com/jnaiman/online_cv_public">using a specific template for this class</a> (you can use others if you are already comfortable with Jekyll, but we will prioritize support for students using the template).</p>
+
+<p>notes:
+while there are many templates, we’ll be using a specific one for this class that supports interactive visualizations with vega-lite</p>
+
+<p>if you already know Jekyll you CAN use your own, but we will not be providing support for it</p>
+
+<hr />
+
+<h2 id="jekyll-6">Jekyll</h2>
+
+<p>Pros:</p>
+<ul>
+  <li>Popular – well documented</li>
+  <li>Uses Markdown in (most) templates, minimizes coding</li>
+</ul>
+
+<p>Cons:</p>
+<ul>
+  <li>Less common syntax (Markdown)</li>
+  <li>open source means less guarantee of long-term support in the future (though, popularity helps with that)</li>
+  <li>Doesn’t support interactive visualization “out of the box”</li>
+</ul>
+
+<hr />
+
+<h2 id="other-webpage-development-options">Other webpage development options</h2>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Wix.com">Wix</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/WordPress">WordPress</a></li>
+  <li><a href="https://www.bigcommerce.com/">BigCommerce</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Shopify">Shopify</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Squarespace">Squarespace</a></li>
+</ul>
+
+<p><img src="images/otherwebdev.png" width="800" alt="source: Diptendra Bagchi" /></p>
+
+<p>notes:
+there are other options out there which will help you build webpages as well, here are just a few</p>
+
+<p>they will have a variety of costs and support different features, some with data viz support, others with less</p>
+
+<p>there will be pros/cons to using these as well!  like cost, but also the cost of learning, or re-learning if they stop supporting the kind of web development you want to do</p>
+
+<hr />
+
+<h2 id="vega-lite-with-jekyll">vega-lite with Jekyll</h2>
+
+<p><img src="images/vegalite_jekyll3.png" /></p>
+
+<p>Link to interactive version <a href="https://jnaiman.github.io/online_cv_public/projects/1-vega-lite-project">here</a>.</p>
+
+<p>notes:
+using the templete, we’ll also be able to support including our vega-lite creations by saving them as json snippets and including them in <code class="language-plaintext highlighter-rouge">assets/json</code></p>
+
+<hr />
+
+<h2 id="altair--python-rightarrow-vega-lite-rightarrow-jekyll"><a href="https://altair-viz.github.io/index.html">Altair</a> : Python $\rightarrow$ vega-lite $\rightarrow$ Jekyll</h2>
+
+<p>We will use <a href="https://altair-viz.github.io/index.html">Altair</a> to translate between any Python analysis and vega-lite json’s (we did this in your Homework #1 as a test):</p>
+
+<p><img src="images/altair1.png" height="600px" /></p>
+
+<p>notes:</p>
+
+<p>we’ll be using altair in Python to translate between any python analysis we do and our interative vega-lite plot, as stored in a json file that we can then include in our webpage</p>
+
+<p>we actually already used a tiny bit of altair to generate a plot in your test homework#1!  this is what was use to generate the figure we see on the default online_cv webpage</p>
+
+<hr />
+
+<h2 id="summary">Summary</h2>
+
+<p><img src="images/words2.png" width="700" /></p>
+
+<p>notes:
+So we just covered a lot of new terms. The worldwide web is a real patchwork of different languages with different syntaxes meant to do different things. Don’t let it overwhelm you. They tend to be pretty simple to start, and only get more complicated when you need them to.</p>
+
+<p>and again, we’ll be using templates and mostly markdown – all of this more complex stuff is happening on the “backend”</p>
+
+<hr />
+
+<h2 id="summary-1">Summary</h2>
+
+<p><img src="images/html.png" width="700" /></p>
+
+<p>notes:
+We talked about this before, but just as a reminder:</p>
+
+<p>HTML or Hypertext Markup Language is the default syntax for websites. It’s meant to be structured with tags like “head”, “body”, “paragraph”, and “division”.</p>
+
+<p>It’s essentially a skeleton for other functionality to hang off of.</p>
+
+<p>You may see the term DOM or Document Object Model. This is just another name for this skeleton/framework.</p>
+
+<p>this is what all of our templates will be modifying for us</p>
+
+<hr />
+
+<h2 id="summary-2">Summary</h2>
+
+<p><img src="images/css.png" width="700" /></p>
+
+<p>notes:
+you might have heard of something like CSS to modify the styles of HTML pages</p>
+
+<p>CSS or cascading style sheets are how you define how websites are formatted. They do color, indentation, drop shadows, etc. Each CSS call is attached to an HTML tag.</p>
+
+<p>CSS can be called in-line, or from an external file dedicated exclusively to CSS code.</p>
+
+<p>again, our templates and yaml options will take care of all of this for us</p>
+
+<hr />
+
+<h2 id="summary-3">Summary</h2>
+
+<p><img src="images/javascript2.png" width="700" /></p>
+
+<p>notes:
+JavaScript is a dynamic programming language that runs natively on webpages that we’ve been using the past few weeks in Starboard. If you want to run programming logic in a webpage, you use javascript. If you see interactivity or animated effects on a website, you can generally expect they were written in javascript.</p>
+
+<p>now we will just use altair+vega-lite and our Jekyll templete to make this happen “under the hood” for us!</p>
+
+<hr />
+
+<h2 id="summary-4">Summary</h2>
+
+<p>Most of this is hidden from you when writing in Jekyll! But it helps to understand the underlying mechanisms.</p>
+
+<p>We’ll start with a “pure” Jekyll page.</p>
+
+<p>Then we’ll figure out how to include vega-lite plots, then we’ll get into Altair and Jekyll (examples are posted).</p>
+
+<p>You can use any of these tools in the final project!</p>
+
+<p>notes:
+what are the limits to data size in vega-lite and the web browser?</p>
+
+<hr />
+
+<h2 id="onto-jekyll-web-pages">Onto Jekyll web pages!</h2>
+

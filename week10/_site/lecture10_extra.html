@@ -1,0 +1,115 @@
+<p><br />
+<br /></p>
+
+<h1 id="a-few-more-notes-about-vega-lite-if-we-have-time">A few more notes about vega-lite if we have time</h1>
+
+<hr />
+
+<h2 id="the-vega-lite-view-api">The vega-lite View API</h2>
+
+<p>The <a href="https://vega.github.io/vega/docs/api/view/#view_insert"><code class="language-plaintext highlighter-rouge">View</code> API</a> in
+vega-lite (rather, vega) is how we manipulate and change data.  This can be
+done by constructing a <code class="language-plaintext highlighter-rouge">changeset</code>, appending operations to that changeset, and
+then executing that changeset on the <code class="language-plaintext highlighter-rouge">view</code> of our embedded visualization.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cs</span> <span class="o">=</span> <span class="nx">vega</span><span class="p">.</span><span class="nx">changeset</span><span class="p">()</span>
+          <span class="p">.</span><span class="nx">remove</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+              <span class="k">return</span> <span class="nx">t</span><span class="p">.</span><span class="nx">CIRCULATION</span> <span class="o">&lt;</span> <span class="mi">10000</span>
+          <span class="p">});</span>
+<span class="nx">embedded</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">view</span><span class="p">.</span><span class="nx">change</span><span class="p">(</span><span class="dl">'</span><span class="s1">table</span><span class="dl">'</span><span class="p">,</span> <span class="nx">cs</span><span class="p">).</span><span class="nx">run</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>This will update the data table named <code class="language-plaintext highlighter-rouge">'table'</code> with everything “queued up” in
+the <code class="language-plaintext highlighter-rouge">changeset</code> object <code class="language-plaintext highlighter-rouge">cs</code>.</p>
+
+<hr />
+
+<h2 id="vega-lite-insert-example">vega-lite: insert example</h2>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vega.github.io/schema/vega-lite/v3.json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A scatterplot"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"table"</span><span class="p">,</span><span class="w">
+             </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">},</span><span class="w">
+                         </span><span class="p">{</span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">},</span><span class="w">
+                         </span><span class="p">{</span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.0</span><span class="p">},</span><span class="w">
+                         </span><span class="p">{</span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.0</span><span class="p">},</span><span class="w">
+                         </span><span class="p">{</span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">6.0</span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"mark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"point"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"encoding"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"x"</span><span class="p">,</span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quantitative"</span><span class="p">},</span><span class="w">
+        </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"y"</span><span class="p">,</span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quantitative"</span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div id="vis2"></div>
+
+<hr />
+
+<h2 id="vega-lite-insert-example-1">vega-lite: insert example</h2>
+
+<p>We can add elements to our dataset with the <code class="language-plaintext highlighter-rouge">insert</code> function.  This takes an
+array of data tuples, like those already included, and adds them to the data
+being visualized.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cs</span> <span class="o">=</span> <span class="nx">vega</span><span class="p">.</span><span class="nx">changeset</span><span class="p">()</span>
+          <span class="p">.</span><span class="nx">insert</span><span class="p">(</span> <span class="p">[</span>
+            <span class="p">{</span><span class="dl">'</span><span class="s1">x</span><span class="dl">'</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="dl">'</span><span class="s1">y</span><span class="dl">'</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">},</span>
+            <span class="p">{</span><span class="dl">'</span><span class="s1">x</span><span class="dl">'</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span> <span class="dl">'</span><span class="s1">y</span><span class="dl">'</span><span class="p">:</span> <span class="mf">1.3</span><span class="p">},</span>
+            <span class="p">{</span><span class="dl">'</span><span class="s1">x</span><span class="dl">'</span><span class="p">:</span> <span class="mf">2.1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">y</span><span class="dl">'</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">}</span>
+          <span class="p">]);</span>
+<span class="nx">embedded3</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">view</span><span class="p">.</span><span class="nx">change</span><span class="p">(</span><span class="dl">'</span><span class="s1">table</span><span class="dl">'</span><span class="p">,</span> <span class="nx">cs</span><span class="p">).</span><span class="nx">run</span><span class="p">();</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="vega-lite-insert-example-2">vega-lite: insert example</h2>
+
+<p>We do this by affixing an event handler, in this case to a button and the event
+<code class="language-plaintext highlighter-rouge">click</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">button3</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> 
+    <span class="kd">function</span> <span class="nx">onButtonClick</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<div id="vis3"></div>
+
+<p><button id="button3">Click to insert</button></p>
+
+<hr />
+
+<h2 id="vega-lite-remove">vega-lite: remove</h2>
+
+<p>Similarly, we can <em>remove</em> data points by supplying a function that is
+evaluated on each of the data tuples.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cs</span> <span class="o">=</span> <span class="nx">vega</span><span class="p">.</span><span class="nx">changeset</span><span class="p">()</span>
+          <span class="p">.</span><span class="nx">insert</span><span class="p">(</span> <span class="p">[</span>
+            <span class="p">{</span><span class="dl">'</span><span class="s1">x</span><span class="dl">'</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="dl">'</span><span class="s1">y</span><span class="dl">'</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">},</span>
+            <span class="p">{</span><span class="dl">'</span><span class="s1">x</span><span class="dl">'</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span> <span class="dl">'</span><span class="s1">y</span><span class="dl">'</span><span class="p">:</span> <span class="mf">1.3</span><span class="p">},</span>
+            <span class="p">{</span><span class="dl">'</span><span class="s1">x</span><span class="dl">'</span><span class="p">:</span> <span class="mf">2.1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">y</span><span class="dl">'</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">}</span>
+            <span class="p">])</span>
+          <span class="p">.</span><span class="nx">remove</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">t</span><span class="p">.</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">t</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+          <span class="p">});</span>
+<span class="nx">embedded4</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">view</span><span class="p">.</span><span class="nx">change</span><span class="p">(</span><span class="dl">'</span><span class="s1">table</span><span class="dl">'</span><span class="p">,</span> <span class="nx">cs</span><span class="p">).</span><span class="nx">run</span><span class="p">();</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="vega-lite-remove-1">vega-lite: remove</h2>
+
+<div id="vis4"></div>
+<p><button id="button4">Click to insert and remove</button></p>
+
+<p>(Wait, what happened …?)</p>
+
+<hr />
+
