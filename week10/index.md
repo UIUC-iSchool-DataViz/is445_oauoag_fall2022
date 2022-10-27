@@ -4,11 +4,11 @@ visible: true
 icon: undraw_Books_l33t.svg
 notitle: true
 examples:
-  - filename: inClass_week10_inperson_fall2022
+  - filename: inClass_week10_online_fall2022
     type: iodide
     title: In Class Starboard Notebook, Week 10
     description: In Class Starboard Notebook
-    link: https://starboard.gg/nb/nDgjr30
+    link: https://starboard.gg/nb/nrSZM7g
   - filename: prep_notebook_week10_fall2022
     type: iodide
     title: Prep Starboard Notebook, Week 10
@@ -18,7 +18,7 @@ examples:
     type: iodide
     title: Jekyll Tour Notes
     description: Prep Starboard Notebook
-    link: https://github.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/blob/main/week10/pdfs/jekyll%20tour%20notes.pdf
+    link: https://github.com/UIUC-iSchool-DataViz/is445_oauoag_fall2022/blob/main/week10/pdfs/jekyll%20tour%20notes.pdf
   - filename: prep-repo
     type: iodide
     title: Prep online_cv file, Week 10
@@ -28,7 +28,7 @@ examples:
     type: iodide
     title: In class Jekyll resources, Week 10
     description: Updating storage of Jekyll files in class
-    link: https://github.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/tree/master/week10/inClass
+    link: https://github.com/UIUC-iSchool-DataViz/is445_oauoag_fall2022/tree/master/week10/inClass
   - filename: prep_notebook_week11
     type: iodidePast
     title: Previous class notebook
