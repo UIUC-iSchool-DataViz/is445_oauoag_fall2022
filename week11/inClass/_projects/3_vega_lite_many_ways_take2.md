@@ -32,7 +32,7 @@ Make sure it is the "raw" form of the data!
 <vegachart schema-url="{{ site.baseurl }}/assets/json/interactivescatter_fulllink.json" style="width: 100%"></vegachart>
 
 
-
+## 2. How to use vega-lite specifications from other sources (i.e. Starboard)
 
 
 
