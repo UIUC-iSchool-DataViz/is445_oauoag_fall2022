@@ -55,6 +55,11 @@ Making a quick scatter plot:
 
 <vegachart schema-url="{{ site.baseurl }}/assets/json/scatters_mobility.json" style="width: 100%"></vegachart>
 
+Remake dashboard, all in Altair:
+
+<vegachart schema-url="{{ site.baseurl }}/assets/json/dashboard_all_in_altair.json" style="width: 100%"></vegachart>
+
+
 
 
 
