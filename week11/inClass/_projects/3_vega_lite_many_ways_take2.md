@@ -13,7 +13,10 @@ custom_js:
 # General ways to include vega-lite plots
 
 Order of operations:
-1.
+
+1. generate a JSON specification (from somewhere -- vega-editor, 
+Altair, etc)
+2. save the JSON specification
 
 ## 1. Including vega-lite plots directly from the editor
 
