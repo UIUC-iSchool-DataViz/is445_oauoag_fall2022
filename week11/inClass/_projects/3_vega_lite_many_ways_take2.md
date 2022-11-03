@@ -17,7 +17,11 @@ Order of operations:
 1. generate a JSON specification (from somewhere -- vega-editor, 
 Altair, etc)
 1. save the JSON specification into `assets/json`
+1. include the "vega-lite tag" with the following example code:
 
+```
+<vegachart schema-url="{{ site.baseurl }}/assets/json/fromvegaeditor.json" style="width: 100%"></vegachart>
+```
 
 ## 1. Including vega-lite plots directly from the editor
 
@@ -25,7 +29,6 @@ Altair, etc)
 
 
 
-<vegachart schema-url="{{ site.baseurl }}/assets/json/fromvegaeditor.json" style="width: 100%"></vegachart>
 
 
 <!-- these are written in a combo of html and liquid --> 
