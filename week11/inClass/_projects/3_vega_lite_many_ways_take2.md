@@ -40,6 +40,7 @@ Starting with a static histogram plot with the Mobility dataset from a [Starboar
 
 Side by side, from Starboard (no interactivity):
 
+<vegachart schema-url="{{ site.baseurl }}/assets/json/sidebyside.json" style="width: 100%"></vegachart>
 
 
 ## 3. Limitations of just copying from Starboard -- how to fix some of this with Altair
