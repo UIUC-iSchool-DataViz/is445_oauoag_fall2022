@@ -16,7 +16,8 @@ Order of operations:
 
 1. generate a JSON specification (from somewhere -- vega-editor, 
 Altair, etc)
-2. save the JSON specification
+1. save the JSON specification into `assets/json`
+
 
 ## 1. Including vega-lite plots directly from the editor
 
