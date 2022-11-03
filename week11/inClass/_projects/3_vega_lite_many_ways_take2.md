@@ -34,6 +34,7 @@ Make sure it is the "raw" form of the data!
 
 ## 2. How to use vega-lite specifications from other sources (i.e. Starboard)
 
+<vegachart schema-url="{{ site.baseurl }}/assets/json/mobility_hist.json" style="width: 100%"></vegachart>
 
 ## 3. Limitations of just copying from Starboard -- how to fix some of this with Altair
 
