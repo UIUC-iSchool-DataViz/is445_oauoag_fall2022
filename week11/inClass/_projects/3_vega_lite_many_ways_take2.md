@@ -53,6 +53,7 @@ Including a `brush` selection and a `transform_filter` in our dashboard for inte
 
 Making a quick scatter plot:
 
+<vegachart schema-url="{{ site.baseurl }}/assets/json/scatters_mobility.json" style="width: 100%"></vegachart>
 
 
 
