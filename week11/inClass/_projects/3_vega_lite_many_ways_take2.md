@@ -25,7 +25,7 @@ Altair, etc)
 
 ## 1. Including vega-lite plots directly from the editor
 
-If we are copying from the [vega-editor](https://vega.github.io/editor)
+If we are copying from the [vega-editor](https://vega.github.io/editor) we want to make sure we have the full data link.  We can find that by Googling for "vega datasets github" which takes us [right here](https://github.com/vega/vega-datasets/tree/next/data) and we can search for our dataset.
 
 <vegachart schema-url="{{ site.baseurl }}/assets/json/interactivescatter_fulllink.json" style="width: 100%"></vegachart>
 
