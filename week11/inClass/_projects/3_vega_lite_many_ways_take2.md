@@ -42,6 +42,10 @@ Side by side, from Starboard (no interactivity):
 
 <vegachart schema-url="{{ site.baseurl }}/assets/json/sidebyside.json" style="width: 100%"></vegachart>
 
+Including a `brush` selection and a `transform_filter` in our dashboard for interactivity:
+
+
+
 
 ## 3. Limitations of just copying from Starboard -- how to fix some of this with Altair
 
