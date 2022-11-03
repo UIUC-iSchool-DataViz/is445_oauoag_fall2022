@@ -49,9 +49,10 @@ Including a `brush` selection and a `transform_filter` in our dashboard for inte
 <vegachart schema-url="{{ site.baseurl }}/assets/json/dashboard_mobility_from_dict.json" style="width: 100%"></vegachart>
 
 
-
-
 ## 4. Making the plot fully in Altair with data stored online)
+
+
+
 
 ## (5. Making plot fully in Altair with local data)
 
