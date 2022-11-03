@@ -34,6 +34,8 @@ Make sure it is the "raw" form of the data!
 
 ## 2. How to use vega-lite specifications from other sources (i.e. Starboard)
 
+Starting with a static histogram plot with the Mobility dataset from a [Starboard Notebook from Week 10](https://starboard.gg/nb/nrSZM7g).
+
 <vegachart schema-url="{{ site.baseurl }}/assets/json/mobility_hist.json" style="width: 100%"></vegachart>
 
 ## 3. Limitations of just copying from Starboard -- how to fix some of this with Altair
