@@ -51,6 +51,10 @@ Including a `brush` selection and a `transform_filter` in our dashboard for inte
 
 ## 4. Making the plot fully in Altair with data stored online)
 
+Making a quick scatter plot:
+
+
+
 
 
 
