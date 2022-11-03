@@ -25,6 +25,8 @@ Altair, etc)
 
 ## 1. Including vega-lite plots directly from the editor
 
+If we are copying from the [vega-editor](https://vega.github.io/editor)
+
 <vegachart schema-url="{{ site.baseurl }}/assets/json/interactivescatter_fulllink.json" style="width: 100%"></vegachart>
 
 
