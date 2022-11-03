@@ -38,6 +38,10 @@ Starting with a static histogram plot with the Mobility dataset from a [Starboar
 
 <vegachart schema-url="{{ site.baseurl }}/assets/json/mobility_hist.json" style="width: 100%"></vegachart>
 
+Side by side, from Starboard (no interactivity):
+
+
+
 ## 3. Limitations of just copying from Starboard -- how to fix some of this with Altair
 
 ## 4. Making the plot fully in Altair with data stored online)
