@@ -39,7 +39,7 @@ Make sure it is the "raw" form of the data!
 
 ## 4. Making the plot fully in Altair with data stored online)
 
-## (5. 
+## (5. Making plot fully in Altair with local data)
 
 
 
