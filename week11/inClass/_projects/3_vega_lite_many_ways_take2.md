@@ -44,6 +44,7 @@ Side by side, from Starboard (no interactivity):
 
 Including a `brush` selection and a `transform_filter` in our dashboard for interactivity:
 
+<vegachart schema-url="{{ site.baseurl }}/assets/json/dashboard_mobility_from_dict.json" style="width: 100%"></vegachart>
 
 
 
