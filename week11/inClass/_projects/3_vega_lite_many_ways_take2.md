@@ -11,13 +11,12 @@ custom_js:
 ---
 
 
-# Example Vega-lite Specs, Multiple Ways to Include
+# 1. Including vega-lite plots directly from the editor
 
 
 
 <vegachart schema-url="{{ site.baseurl }}/assets/json/fromvegaeditor.json" style="width: 100%"></vegachart>
 
-<vegachart schema-url="{{ site.baseurl }}/assets/json/interactivefromvegaeditor.json" style="width: 100%"></vegachart>
 
 <!-- these are written in a combo of html and liquid --> 
 
