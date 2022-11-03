@@ -35,6 +35,13 @@ Make sure it is the "raw" form of the data!
 ## 2. How to use vega-lite specifications from other sources (i.e. Starboard)
 
 
+## 3. Limitations of just copying from Starboard -- how to fix some of this with Altair
+
+## 4. Making the plot fully in Altair with data stored online)
+
+## (5. 
+
+
 
 <!-- these are written in a combo of html and liquid --> 
 
