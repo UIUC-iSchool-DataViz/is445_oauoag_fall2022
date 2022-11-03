@@ -10,8 +10,14 @@ custom_js:
   - justcharts
 ---
 
+# General ways to include vega-lite plots
 
-# 1. Including vega-lite plots directly from the editor
+Order of operations:
+1.
+
+## 1. Including vega-lite plots directly from the editor
+
+
 
 
 
