@@ -23,6 +23,11 @@ examples:
     title: Prep Notebook, Week 12
     description: Prep notebook for this week
 data:
+  - filename: building_inventory.csv
+    type: dataLink
+    title: Buildings dataset
+    description: Illinois buildings dataset
+    link: https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/main/data/building_inventory.csv
   - filename: corgs_per_country_over_time_columns_2020.csv
     type: dataLink
     title: Corgis per country over time 
