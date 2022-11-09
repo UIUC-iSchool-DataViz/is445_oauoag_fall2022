@@ -6,21 +6,21 @@ notitle: true
 examples:
   - filename: In Class Jekyll
     type: iodide
-    title: In class Jekyll resources, Week 13
+    title: In class Jekyll resources, Week 12
     description: Updating storage of Jekyll files in class
-    link: https://github.com/UIUC-iSchool-DataViz/is445_bcubcg_fall2022/tree/master/week13/inClass
+    link: https://github.com/UIUC-iSchool-DataViz/is445_oauoag_fall2022/tree/master/week12/inClass
   - filename: Prep repo
     type: iodide
-    title: Prep Jekyll, Week 13
+    title: Prep Jekyll, Week 12
     description: Prep Jekyll file and components
     link: https://github.com/jnaiman/online_cv_public
-  - filename: inClass_week13.ipynb
+  - filename: inClass_week12.ipynb
     type: ipynb
-    title: In class jupyter notebook, Week 13
+    title: In class jupyter notebook, Week 12
     description: Placeholder for in class coding
-  - filename: prep_notebook_week13_part1.ipynb
+  - filename: prep_notebook_week12_part1.ipynb
     type: ipynb
-    title: Prep Notebook, Week 13
+    title: Prep Notebook, Week 12
     description: Prep notebook for this week
 data:
   - filename: corgs_per_country_over_time_columns_2020.csv
