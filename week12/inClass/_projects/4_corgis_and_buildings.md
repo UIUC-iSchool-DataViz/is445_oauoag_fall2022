@@ -33,6 +33,6 @@ Altair, etc)
 </div>
 
 <div class="right">
-{% include elements/button.html link="https://github.com/UIUC-iSchool-DataViz/is445_oauoag_fall2022/blob/main/week11/inClass_week11.ipynb" text="The Analysis" %}
+{% include elements/button.html link="https://github.com/UIUC-iSchool-DataViz/is445_oauoag_fall2022/blob/main/week12/inClass_week12.ipynb" text="The Analysis" %}
 </div>
 
