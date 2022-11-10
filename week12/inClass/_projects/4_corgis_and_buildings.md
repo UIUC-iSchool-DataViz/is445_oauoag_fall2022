@@ -23,6 +23,10 @@ Altair, etc)
 <vegachart schema-url="{{ site.baseurl }}/assets/json/fromvegaeditor.json" style="width: 100%"></vegachart>
 ```
 
+## 1. Line plots with Altair and Buildings Dataset
+
+### I. Double line plot with "layers" in Altair
+
 
 
 
