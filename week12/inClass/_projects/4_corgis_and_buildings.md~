@@ -1,6 +1,6 @@
 ---
-name: More with Altair - Corgis and Buildings
-tools: [Python, HTML, vega-lite, Jekyll, Altair]
+name: Take 2 - vega-lite, many ways
+tools: [Python, HTML, vega-lite, Jekyll]
 image: assets/pngs/vegaliteTake2.png
 description: Multiple ways to use vega-lite in our Jekyll page.
 custom_js:
