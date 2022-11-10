@@ -61,10 +61,7 @@ Remake dashboard, all in Altair:
 
 
 
-
-
-
-## (5. Making plot fully in Altair with local data)
+## 5. Making plot fully in Altair with local data
 
 
 
