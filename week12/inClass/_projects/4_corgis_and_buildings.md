@@ -33,6 +33,11 @@ Some (almost) "for free" interactivity that we get is pan zoom:
 
 <vegachart schema-url="{{ site.baseurl }}/assets/json/buildings_sqft_panzoom.json" style="width: 100%"></vegachart>
 
+### II. Multiple stats with the "melt" operation in Pandas
+
+<vegachart schema-url="{{ site.baseurl }}/assets/json/buildings_stats_dropdown.json" style="width: 100%"></vegachart>
+
+
 
 
 <!-- these are written in a combo of html and liquid --> 
