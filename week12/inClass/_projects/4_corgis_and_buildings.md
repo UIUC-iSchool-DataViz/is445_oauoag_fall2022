@@ -31,7 +31,7 @@ Altair, etc)
 
 Some (almost) "for free" interactivity that we get is pan zoom:
 
-<vegachart schema-url="{{ site.baseurl }}/assets/json/buildings_sqft.json" style="width: 100%"></vegachart>
+<vegachart schema-url="{{ site.baseurl }}/assets/json/buildings_sqft_panzoom.json" style="width: 100%"></vegachart>
 
 
 
