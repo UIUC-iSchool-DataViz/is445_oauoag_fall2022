@@ -63,6 +63,8 @@ Remake dashboard, all in Altair:
 
 ## 5. Making plot fully in Altair with local data
 
+Starting here in Week 12 -- final way of using Altair with fully local data to make the mobility dashboard.
+
 
 
 <!-- these are written in a combo of html and liquid --> 
