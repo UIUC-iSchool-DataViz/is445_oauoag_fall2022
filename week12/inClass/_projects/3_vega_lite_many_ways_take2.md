@@ -67,6 +67,8 @@ Starting here in Week 12 -- final way of using Altair with fully local data to m
 
 <vegachart schema-url="{{ site.baseurl }}/assets/json/dashboard_all_in_altair_subset.json" style="width: 100%"></vegachart>
 
+Note: we made sure that the local dataframe that we passed to Altair was as small as possible (subsetting by columns in our case).
+
 
 <!-- these are written in a combo of html and liquid --> 
 
