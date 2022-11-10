@@ -1,7 +1,7 @@
 ---
 name: Take 2 - vega-lite, many ways
 tools: [Python, HTML, vega-lite, Jekyll]
-image: assets/pngs/cars.png
+image: assets/pngs/vegaliteTake2.png
 description: Multiple ways to use vega-lite in our Jekyll page.
 custom_js:
   - vega.min
