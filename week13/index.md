@@ -4,13 +4,13 @@ visible: true
 icon: undraw_medical_research_qg4d.svg
 notitle: true
 examples:
-  - filename: inClass_week15.ipynb
+  - filename: inClass_week13.ipynb
     type: ipynb
     title: In class notebook
     description: Placeholder for in class coding
-  - filename: prep_notebook_week15.ipynb
+  - filename: prep_notebook_week13_sciviz.ipynb
     type: ipynb
-    title: Prep Notebook, Week 15
+    title: Prep Notebook, SciViz, Week 13
     description: Prep notebook for this week
   - filename: spring2019_prep_notebook_week13.ipynb
     type: ipynb
