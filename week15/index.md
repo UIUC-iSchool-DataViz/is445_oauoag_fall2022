@@ -4,7 +4,7 @@ visible: true
 icon: undraw_nakamoto_2iv6.svg
 notitle: true
 examples:
-  - filename: inClass_week16.ipynb
+  - filename: inClass_week15.ipynb
     type: ipynb
     title: In class notebook
     description: Placeholder for in class coding
